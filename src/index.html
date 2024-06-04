@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Buddy</title>
+
+    <link rel="stylesheet" href="../build/tailwind.css" />
+    <style>
+      /* Ensure dropdowns are hidden by default */
+      .dropdown-menu {
+        display: none;
+      }
+      /* Show dropdowns on hover */
+      .dropdown:hover .dropdown-menu {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ========== MAIN CONTENT ========== -->
+    <nav class="bg-[transparent] dark:bg-black dark:text-gray-200">
+      <div
+        class="container mx-auto px-4 md:flex items-center gap-6 justify-between"
+      >
+        <!-- Logo -->
+        <div class="flex items-center justify-between md:w-auto w-full">
+          <a href="#" class="flex items-center py-5 px-2 flex-1">
+            <span class="font-bold">Webcrunch</span>
+          </a>
+          <!-- Mobile Menu Button -->
+          <div class="md:hidden flex items-center">
+            <button class="mobile-menu-button">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+              >
+                <title>bars-3-bottom-left</title>
+                <g fill="none">
+                  <path
+                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25H12"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                </g>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <!-- Primary Navigation -->
+        <div
+          class="hidden md:flex md:flex-row flex-col items-center justify-start md:space-x-1 navigation-menu pb-3 md:pb-0 navigation-menu"
+        >
+          <a href="#" class="py-2 px-3 block hover:text-primary rounded"
+            >Domains</a
+          >
+          <a href="#" class="py-2 px-3 block hover:text-primary rounded"
+            >Hosting</a
+          >
+          <!-- Dropdown Menu -->
+          <div class="relative dropdown">
+            <button
+              class="dropdown-toggle py-2 px-3 hover:text-primary flex items-center gap-2 rounded"
+            >
+              <span class="pointer-events-none">Servers</span>
+            </button>
+            <div
+              class="dropdown-menu absolute hidden bg-primary divide-y text-white rounded w-48 rounded-br-lg"
+            >
+              <a href="#" class="block px-6 py-2">Buy</a>
+              <a href="#" class="block px-6 py-2">Transfer</a>
+              <a href="#" class="block px-6 py-2">Renew</a>
+              <a href="#" class="block px-6 py-2">Whols</a>
+              <a href="#" class="block px-6 py-2">Backorder</a>
+            </div>
+          </div>
+          <a href="#" class="py-2 px-3 block hover:text-primary rounded"
+            >Support</a
+          >
+          <!-- Right Buttons -->
+          <div class="hidden md:flex items-center space-x-4">
+            <div class="mt-4 flex gap-4 sm:mt-0 sm:flex-row sm:items-center">
+              <button
+                class="btn inline-flex rounded-br-3xl px-3 py-3 border border-gray-200"
+                type="button"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  class="w-6 h-6"
+                  stroke-width="1.5"
+                  stroke="url(#gradient)"
+                >
+                  <defs>
+                    <linearGradient
+                      id="gradient"
+                      x1="0%"
+                      y1="0%"
+                      x2="100%"
+                      y2="100%"
+                    >
+                      <stop offset="0%" stop-color="#1a5a96" />
+                      <stop offset="100%" stop-color="#52c29a" />
+                    </linearGradient>
+                  </defs>
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    fill="white"
+                    d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"
+                  />
+                </svg>
+              </button>
+
+              <button
+                class="btn px-8 py-3 flex items-center gap-1.5 rounded-br-3xl border border-gray-200 text-gray-500 transition hover:bg-gray-50 hover:text-blue-600 focus:outline-none focus:ring"
+                type="button"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  class="w-6 h-6"
+                  stroke-width="1.5"
+                  stroke="url(#gradient)"
+                >
+                  <defs>
+                    <linearGradient
+                      id="gradient"
+                      x1="0%"
+                      y1="0%"
+                      x2="100%"
+                      y2="100%"
+                    >
+                      <stop offset="0%" stop-color="#1a5a96" />
+                      <stop offset="100%" stop-color="#52c29a" />
+                    </linearGradient>
+                  </defs>
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"
+                  />
+                </svg>
+                <span>Sign In</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- ========== END MAIN CONTENT ========== -->
+    <div
+      class="dark:bg-gray-800 flex-1 min-h-screen"
+      style="
+        background-image: url('order_back.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+      "
+    >
+      <div class="dark:bg-transparent">
+        <div class="mx-auto flex flex-col items-center py-12 sm:py-24">
+          <div
+            class="w-11/12 sm:w-2/3 lg:flex justify-center items-center flex-col mb-5 sm:mb-10"
+          >
+            <!-- <h1
+              class=" text-center text-gray-800 dark:text-white font-black leading-10"
+            >
+              Let's not stress for
+              <span class="text-violet-800 dark:text-violet-500">Website</span>
+              designs.
+            </h1> -->
+            <h1
+              class="mt-5 sm:mt-10 lg:w-10/12 text-gray-600 dark:text-gray-300 font-normal text-center text-xl text-4xl sm:text-5xl md:text-5xl lg:text-5xl xl:text-6xl"
+            >
+              Own a domain, launch your
+              <br class="hidden lg:block md:block xl:block" />
+              brand on the Internet today
+            </h1>
+          </div>
+          <div class="flex w-11/12 md:w-8/12 xl:w-6/12">
+            <div class="flex rounded-md w-full items-center gap-2 relative">
+              <div
+                class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"
+              >
+                <svg
+                  class="w-4 h-4 text-gray-900"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
+                  ></path>
+                </svg>
+              </div>
+              <input
+                type="text"
+                name="q"
+                class="w-full p-3 pl-10 rounded-md border border-2 border-gray-300 dark:bg-gray-500 dark:text-gray-300 dark:border-none rounded-br-lg"
+                placeholder="specialdomain.com"
+              />
+              <button
+                class="bg-primary hover:bg-midnight-400 text-white font-bold py-4 px-5 round rounded-br-lg rounded-md"
+                type="submit"
+              >
+                <span>Search</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer -->
+    <footer class="bg-white shadow-xl mt-auto">
+      <div class="container mx-auto px-4 py-8">
+        <div class="grid grid-cols-1 md:grid-cols-12">
+          <!-- Contact Section -->
+          <div class="md:col-span-4">
+            <h3 class="text-3xl font-bold mb-4">Host It Buddy</h3>
+            <p class="mb-2">+00 0000 0000</p>
+            <p class="mb-2">
+              <a
+                href="mailto:emailaddress@hostitbuddy.com"
+                class="hover:underline"
+                >emailaddress@hostitbuddy.com</a
+              >
+            </p>
+            <p class="mb-2">Insert Office Address Here</p>
+          </div>
+          <div class="container mx-auto md:col-span-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              <!-- General Section -->
+              <div>
+                <h3 class="text-xl font-semibold mb-4">General</h3>
+                <ul>
+                  <li><a href="#" class="hover:underline">Home</a></li>
+                  <li><a href="#" class="hover:underline">About Us</a></li>
+                  <li><a href="#" class="hover:underline">FAQ</a></li>
+                  <li><a href="#" class="hover:underline">Contact Us</a></li>
+                </ul>
+              </div>
+
+              <!-- Hosting Section -->
+              <div>
+                <h3 class="text-xl font-semibold mb-4">Domains</h3>
+                <ul>
+                  <li><a href="#" class="hover:underline">Buy</a></li>
+                  <li><a href="#" class="hover:underline">Transfer</a></li>
+                  <li><a href="#" class="hover:underline">Renew</a></li>
+                  <li><a href="#" class="hover:underline">Whols</a></li>
+                  <li>
+                    <a href="#" class="hover:underline">Backorder</a>
+                  </li>
+                </ul>
+              </div>
+              <!-- Hosting Section -->
+              <div>
+                <h3 class="text-xl font-semibold mb-4">Hosting</h3>
+                <ul>
+                  <li><a href="#" class="hover:underline">Web Hosting</a></li>
+                  <li>
+                    <a href="#" class="hover:underline">Business Hosting</a>
+                  </li>
+                  <li>
+                    <a href="#" class="hover:underline">WordPress Hosting</a>
+                  </li>
+                  <li><a href="#" class="hover:underline">Email Hosting</a></li>
+                  <li>
+                    <a href="#" class="hover:underline"
+                      >WooCommerce Online Store</a
+                    >
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Servers Section -->
+              <div>
+                <h3 class="text-xl font-semibold mb-4">Servers</h3>
+                <ul>
+                  <li>
+                    <a href="#" class="hover:underline">cPanel Managed VPS</a>
+                  </li>
+                  <li><a href="#" class="hover:underline">Windows VPS</a></li>
+                  <li><a href="#" class="hover:underline">Linux VPS</a></li>
+                  <li><a href="#" class="hover:underline">Linux Servers</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-8 border-t border-gray-700 pt-8">
+          <div class="flex flex-col md:flex-row justify-center">
+            <!-- <div class="mb-4 md:mb-0">
+              <a href="#" class="hover:underline">Our Policies</a> |
+              <a href="#" class="hover:underline">WhoIs</a> |
+              <a href="#" class="hover:underline">Backorder</a>
+            </div> -->
+            <div>
+              <p>&copy; 2024 Host It Buddy, all rights reserved...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const mobileMenuButton = document.querySelector(".mobile-menu-button");
+        const navigationMenu = document.querySelector(".navigation-menu");
+
+        mobileMenuButton.addEventListener("click", () => {
+          navigationMenu.classList.toggle("hidden");
+        });
+      });
+    </script>
+  </body>
+</html>

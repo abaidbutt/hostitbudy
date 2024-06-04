@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* .heading-1 {
+  @apply text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-black;
+} */
+
+/* background: linear-gradient(to bottom right, #1a5a96, #52c29a); */
+.btn {
+  padding: 20px 20px;
+  border: none;
+  outline: none;
+  position: relative;
+  z-index: 1;
+  border-radius: 5px;
+  background: linear-gradient(to bottom right, #1a5a96, #52c29a);
+  cursor: pointer;
+  border-bottom-right-radius: 20px;
+}
+.btn::before {
+  content: "";
+  position: absolute;
+  left: 1px;
+  right: 1px;
+  top: 1px;
+  bottom: 1px;
+  border-radius: 4px;
+  background-color: white;
+  z-index: -1;
+  transition: 200ms;
+  border-bottom-right-radius: 20px;
+}
+.btn::after {
+  content: attr(data);
+  font-size: 16px;
+  background: linear-gradient(to bottom right, #1a5a96, #52c29a);
+  -webkit-background-clip: text;
+  color: transparent;
+  transition: 200ms;
+}
+/* .btn:hover::before {
+  opacity: 50%;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+}
+.btn:hover::after {
+  color: white;
+} */

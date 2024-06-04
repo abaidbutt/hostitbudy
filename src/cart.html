@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart</title>
+    <link rel="stylesheet" href="../build/tailwind.css" />
+    <style>
+      .toggle-checkbox:checked + .toggle-label {
+        background-color: #68d391; /* Tailwind green-400 */
+      }
+      .toggle-checkbox:checked + .toggle-label .dot {
+        transform: translateX(100%);
+        background-color: #fff; /* Change dot color on active if needed */
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Top Header -->
+
+    <div class="container mx-auto px-4 my-5">
+      <h1 class="text-lg font-semibold">Your Cart</h1>
+    </div>
+    <!-- Cart Section -->
+    <section class="container mx-auto px-4 pb-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        <!-- Cart Items -->
+        <div class="lg:col-span-8 space-y-8">
+          <!-- Cart Item -->
+          <div class="bg-white p-4 rounded-md shadow-md">
+            <div class="flex items-center justify-between">
+              <h2 class="text-xl font-semibold mb-2">specialdomain.net</h2>
+              <p class="text-secondary mb-2">SG$39</p>
+            </div>
+            <p class="text-secondary mb-2">Domain name registration</p>
+            <p class="text-secondary mb-2">
+              Extra information and description here if needed
+            </p>
+            <div class="flex items-center mb-2">
+              <label for="year" class="mr-2">Year:</label>
+              <select
+                name="year"
+                id="year"
+                class="border border-secondary rounded-md rounded-br-lg py-1 px-2 focus:outline-none focus:border-primary"
+              >
+                <option value="1">1 Year</option>
+                <option value="2">2 Years</option>
+                <option value="5">5 Years</option>
+                <option value="10">10 Years</option>
+              </select>
+            </div>
+            <p class="text-secondary mb-2">Subscription:</p>
+            <div class="p-2 rounded-lg mb-2 flex justify-between items-center">
+              <div class="flex gap-5 items-center">
+                <div class="flex items-center">
+                  <label for="toggle" class="flex items-center cursor-pointer">
+                    <!-- Toggle -->
+                    <div class="relative">
+                      <!-- Input -->
+                      <input
+                        type="checkbox"
+                        id="toggle"
+                        class="sr-only toggle-checkbox"
+                      />
+                      <!-- Line -->
+                      <div
+                        class="block bg-gray-500 w-14 h-8 rounded-full toggle-label transition"
+                      >
+                        <!-- Dot -->
+                        <div
+                          class="dot absolute left-1 top-1 w-6 h-6 bg-white rounded-full transition transform"
+                        ></div>
+                      </div>
+                    </div>
+                  </label>
+                </div>
+
+                <div>
+                  <p class="text-secondary">Title text goes here</p>
+                  <p class="text-secondary">Secondary text line goes here</p>
+                </div>
+              </div>
+              <p class="text-secondary">SG$19</p>
+            </div>
+            <div class="flex justify-end items-end">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                class="w-6 h-6 text-primary"
+                fill="none"
+                style="color: #4ab39a"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- Order Summary -->
+        <div class="lg:col-span-4 bg-white p-4 rounded-md shadow-md">
+          <div class="flex justify-between items-center">
+            <h2 class="text-xl font-semibold mb-4">Order</h2>
+            <p class="text-secondary mb-2">3 Items</p>
+          </div>
+          <div class="border-t border-secondary pt-2 my-5">
+            <div class="flex justify-between mb-2">
+              <span>Subtotal</span>
+              <span>SG$146</span>
+            </div>
+            <div class="flex justify-between mb-2">
+              <span>GST</span>
+              <span>SG$3.18</span>
+            </div>
+
+            <div class="flex justify-between mb-2">
+              <span>Discount</span>
+              <span class="text-red-500">– SG$0</span>
+            </div>
+          </div>
+          <div class="border-t border-secondary pt-4 mt-4">
+            <div class="flex justify-between text-lg font-semibold">
+              <span>Total</span>
+              <span>SG$149.18</span>
+            </div>
+          </div>
+          <div class="flex w-full justify-start flex-col items-start gap-5">
+            <button
+              class="block w-full text-center py-3 text-lg font-semibold text-white bg-primary rounded-md rounded-br-lg shadow hover:bg-white hover:text-primary hover:border hover:border-primary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
+            >
+              Pay
+            </button>
+            <button
+              class="block text-center w-full py-3 text-lg font-semibold text-primary border border-primary rounded-md rounded-br-lg shadow hover:bg-primary hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+            >
+              Continue Shopping
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script>
+      const toggle = document.getElementById("toggle");
+      const dot = document.querySelector(".dot");
+
+      toggle.addEventListener("change", function () {
+        if (this.checked) {
+          dot.classList.add("translate-x-full");
+        } else {
+          dot.classList.remove("translate-x-full");
+        }
+      });
+    </script>
+  </body>
+</html>
