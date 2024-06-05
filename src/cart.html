@@ -16,10 +16,149 @@
     </style>
   </head>
   <body>
-    <!-- Top Header -->
+    <!-- ========== Header CONTENT ========== -->
+    <nav class="bg-[transparent] dark:bg-black dark:text-secondary">
+      <div
+        class="container mx-auto px-4 md:flex items-center gap-6 justify-between"
+      >
+        <!-- Logo -->
+        <div class="flex items-center justify-between md:w-auto w-full">
+          <a href="#" class="flex items-center py-5 px-2 flex-1">
+            <img
+              src="./assets/Logo.svg"
+              alt="24/7 Support"
+              class="object-contain mb-4"
+            />
+          </a>
+          <!-- Mobile Menu Button -->
+          <div class="md:hidden flex items-center">
+            <button class="mobile-menu-button">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+              >
+                <title>bars-3-bottom-left</title>
+                <g fill="none">
+                  <path
+                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25H12"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                </g>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <!-- Primary Navigation -->
+        <div
+          class="hidden md:flex md:flex-row flex-col items-center justify-start md:space-x-1 navigation-menu pb-3 md:pb-0 navigation-menu"
+        >
+          <a href="#" class="py-2 px-3 block hover:text-primary rounded"
+            >Domains</a
+          >
+          <a href="#" class="py-2 px-3 block hover:text-primary rounded"
+            >Hosting</a
+          >
+          <!-- Dropdown Menu -->
+          <div class="relative dropdown">
+            <button
+              class="dropdown-toggle py-2 px-3 hover:text-primary flex items-center gap-2 rounded"
+            >
+              <span class="pointer-events-none">Servers</span>
+            </button>
+            <div
+              class="dropdown-menu absolute hidden bg-primary divide-y text-white text-center rounded w-32 rounded-br-lg"
+            >
+              <a href="#" class="block px-6 py-2">Buy</a>
+              <a href="#" class="block px-6 py-2">Transfer</a>
+              <a href="#" class="block px-6 py-2">Renew</a>
+              <a href="#" class="block px-6 py-2">Whols</a>
+              <a href="#" class="block px-6 py-2">Backorder</a>
+            </div>
+          </div>
+          <a href="#" class="py-2 px-3 block hover:text-primary rounded"
+            >Support</a
+          >
+          <!-- Right Buttons -->
+          <div class="hidden md:flex items-center space-x-4">
+            <div class="mt-4 flex gap-4 sm:mt-0 sm:flex-row sm:items-center">
+              <button
+                class="btn inline-flex rounded-br-3xl px-3 py-3 border border-sectext-secondary"
+                type="button"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  class="w-6 h-6"
+                  stroke-width="1.5"
+                  stroke="url(#gradient)"
+                >
+                  <defs>
+                    <linearGradient
+                      id="gradient"
+                      x1="0%"
+                      y1="0%"
+                      x2="100%"
+                      y2="100%"
+                    >
+                      <stop offset="0%" stop-color="#1a5a96" />
+                      <stop offset="100%" stop-color="#52c29a" />
+                    </linearGradient>
+                  </defs>
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    fill="white"
+                    d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"
+                  />
+                </svg>
+              </button>
 
-    <div class="container mx-auto px-4 my-5">
-      <h1 class="text-lg font-semibold">Your Cart</h1>
+              <button
+                class="btn px-8 py-3 flex items-center gap-1.5 rounded-br-3xl border border-sectext-secondary text-secondary transition hover:bg-sectext-secondaryhover:text-blue-600 focus:outline-none focus:ring"
+                type="button"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  class="w-6 h-6"
+                  stroke-width="1.5"
+                  stroke="url(#gradient)"
+                >
+                  <defs>
+                    <linearGradient
+                      id="gradient"
+                      x1="0%"
+                      y1="0%"
+                      x2="100%"
+                      y2="100%"
+                    >
+                      <stop offset="0%" stop-color="#1a5a96" />
+                      <stop offset="100%" stop-color="#52c29a" />
+                    </linearGradient>
+                  </defs>
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"
+                  />
+                </svg>
+                <span>Sign In</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- Top Header -->
+    <div class="container mx-auto px-4 my-5 flex items-center gap-2">
+      <img src="./assets/cart.svg" alt="Cart" class="object-contain" />
+      <h1 class="text-4xl font-semibold text-secondary">Cart</h1>
     </div>
     <!-- Cart Section -->
     <section class="container mx-auto px-4 pb-8">
@@ -27,9 +166,159 @@
         <!-- Cart Items -->
         <div class="lg:col-span-8 space-y-8">
           <!-- Cart Item -->
-          <div class="bg-white p-4 rounded-md shadow-md">
+          <div class="p-4">
             <div class="flex items-center justify-between">
-              <h2 class="text-xl font-semibold mb-2">specialdomain.net</h2>
+              <h2 class="text-xl font-semibold text-secondary mb-2">
+                specialdomain.net
+              </h2>
+              <p class="text-secondary mb-2">SG$39</p>
+            </div>
+            <p class="text-secondary mb-2">Domain name registration</p>
+            <p class="text-secondary mb-2">
+              Extra information and description here if needed
+            </p>
+            <div class="flex items-center mb-2">
+              <label for="year" class="mr-2">Year:</label>
+              <select
+                name="year"
+                id="year"
+                class="border border-secondary rounded-md rounded-br-lg py-1 px-2 focus:outline-none focus:border-primary"
+              >
+                <option value="1">1 Year</option>
+                <option value="2">2 Years</option>
+                <option value="5">5 Years</option>
+                <option value="10">10 Years</option>
+              </select>
+            </div>
+            <p class="text-secondary mb-2">Subscription:</p>
+            <div class="p-2 rounded-lg mb-2 flex justify-between items-center">
+              <div class="flex gap-5 items-center">
+                <div class="flex items-center">
+                  <label for="toggle" class="flex items-center cursor-pointer">
+                    <!-- Toggle -->
+                    <div class="relative">
+                      <!-- Input -->
+                      <input
+                        type="checkbox"
+                        id="toggle"
+                        class="sr-only toggle-checkbox"
+                      />
+                      <!-- Line -->
+                      <div
+                        class="block bg-gray-500 w-14 h-8 rounded-full toggle-label transition"
+                      >
+                        <!-- Dot -->
+                        <div
+                          class="dot absolute left-1 top-1 w-6 h-6 bg-white rounded-full transition transform"
+                        ></div>
+                      </div>
+                    </div>
+                  </label>
+                </div>
+
+                <div>
+                  <p class="text-secondary">Title text goes here</p>
+                  <p class="text-secondary">Secondary text line goes here</p>
+                </div>
+              </div>
+              <p class="text-secondary">SG$19</p>
+            </div>
+            <div class="flex justify-end items-end">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                class="w-6 h-6 text-primary"
+                fill="none"
+                style="color: #4ab39a"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0"
+                />
+              </svg>
+            </div>
+          </div>
+          <div class="p-4">
+            <div class="flex items-center justify-between">
+              <h2 class="text-xl font-semibold text-secondary mb-2">
+                specialdomain.net
+              </h2>
+              <p class="text-secondary mb-2">SG$39</p>
+            </div>
+            <p class="text-secondary mb-2">Domain name registration</p>
+            <p class="text-secondary mb-2">
+              Extra information and description here if needed
+            </p>
+            <div class="flex items-center mb-2">
+              <label for="year" class="mr-2">Year:</label>
+              <select
+                name="year"
+                id="year"
+                class="border border-secondary rounded-md rounded-br-lg py-1 px-2 focus:outline-none focus:border-primary"
+              >
+                <option value="1">1 Year</option>
+                <option value="2">2 Years</option>
+                <option value="5">5 Years</option>
+                <option value="10">10 Years</option>
+              </select>
+            </div>
+            <p class="text-secondary mb-2">Subscription:</p>
+            <div class="p-2 rounded-lg mb-2 flex justify-between items-center">
+              <div class="flex gap-5 items-center">
+                <div class="flex items-center">
+                  <label for="toggle" class="flex items-center cursor-pointer">
+                    <!-- Toggle -->
+                    <div class="relative">
+                      <!-- Input -->
+                      <input
+                        type="checkbox"
+                        id="toggle"
+                        class="sr-only toggle-checkbox"
+                      />
+                      <!-- Line -->
+                      <div
+                        class="block bg-gray-500 w-14 h-8 rounded-full toggle-label transition"
+                      >
+                        <!-- Dot -->
+                        <div
+                          class="dot absolute left-1 top-1 w-6 h-6 bg-white rounded-full transition transform"
+                        ></div>
+                      </div>
+                    </div>
+                  </label>
+                </div>
+
+                <div>
+                  <p class="text-secondary">Title text goes here</p>
+                  <p class="text-secondary">Secondary text line goes here</p>
+                </div>
+              </div>
+              <p class="text-secondary">SG$19</p>
+            </div>
+            <div class="flex justify-end items-end">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                class="w-6 h-6 text-primary"
+                fill="none"
+                style="color: #4ab39a"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0"
+                />
+              </svg>
+            </div>
+          </div>
+          <div class="p-4">
+            <div class="flex items-center justify-between">
+              <h2 class="text-xl font-semibold text-secondary mb-2">
+                specialdomain.net
+              </h2>
               <p class="text-secondary mb-2">SG$39</p>
             </div>
             <p class="text-secondary mb-2">Domain name registration</p>
@@ -102,47 +391,211 @@
         </div>
 
         <!-- Order Summary -->
-        <div class="lg:col-span-4 bg-white p-4 rounded-md shadow-md">
-          <div class="flex justify-between items-center">
-            <h2 class="text-xl font-semibold mb-4">Order</h2>
-            <p class="text-secondary mb-2">3 Items</p>
-          </div>
-          <div class="border-t border-secondary pt-2 my-5">
-            <div class="flex justify-between mb-2">
-              <span>Subtotal</span>
-              <span>SG$146</span>
+        <div class="lg:col-span-4">
+          <div class="shadow-md rounded-br-lg rounded-md p-4">
+            <div class="flex justify-between items-center">
+              <h2 class="text-xl font-semibold text-secondary mb-4">Order</h2>
+              <p class="text-secondary mb-2">3 Items</p>
             </div>
-            <div class="flex justify-between mb-2">
-              <span>GST</span>
-              <span>SG$3.18</span>
-            </div>
+            <div class="border-t border-secondary pt-2 my-5">
+              <div class="flex justify-between mb-2">
+                <span>Subtotal</span>
+                <span>SG$146</span>
+              </div>
+              <div class="flex justify-between mb-2">
+                <span>GST</span>
+                <span>SG$3.18</span>
+              </div>
 
-            <div class="flex justify-between mb-2">
-              <span>Discount</span>
-              <span class="text-red-500">– SG$0</span>
+              <div class="flex justify-between mb-2">
+                <span>Discount</span>
+                <span class="text-red-500">– SG$0</span>
+              </div>
             </div>
-          </div>
-          <div class="border-t border-secondary pt-4 mt-4">
-            <div class="flex justify-between text-lg font-semibold">
-              <span>Total</span>
-              <span>SG$149.18</span>
+            <div class="border-t border-secondary pt-4 mt-4">
+              <div
+                class="flex justify-between text-lg font-semibold text-secondary"
+              >
+                <span>Total</span>
+                <span>SG$149.18</span>
+              </div>
             </div>
-          </div>
-          <div class="flex w-full justify-start flex-col items-start gap-5">
-            <button
-              class="block w-full text-center py-3 text-lg font-semibold text-white bg-primary rounded-md rounded-br-lg shadow hover:bg-white hover:text-primary hover:border hover:border-primary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
-            >
-              Pay
-            </button>
-            <button
-              class="block text-center w-full py-3 text-lg font-semibold text-primary border border-primary rounded-md rounded-br-lg shadow hover:bg-primary hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-            >
-              Continue Shopping
-            </button>
+            <div class="flex w-full justify-start flex-col items-start gap-5">
+              <button
+                class="block w-full text-center py-3 text-lg font-semibold text-secondary text-white bg-primary rounded-md rounded-br-lg shadow hover:bg-white hover:text-primary hover:border hover:border-primary focus:outline-none focus:ring focus:ring-offset-2 focus:ring-primary"
+              >
+                Pay
+              </button>
+              <button
+                class="block text-center w-full py-3 text-lg font-semibold text-secondary text-primary border border-primary rounded-md rounded-br-lg shadow hover:bg-primary hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+              >
+                Continue Shopping
+              </button>
+            </div>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- Footer -->
+    <footer class="bg-white shadow-xl mt-auto">
+      <div class="container mx-auto px-4 py-8">
+        <div class="grid grid-cols-1 md:grid-cols-12">
+          <!-- Contact Section -->
+          <div class="md:col-span-4">
+            <h3 class="text-3xl font-bold mb-4 text-gradient">
+              <img
+                src="./assets/Logo.svg"
+                alt="24/7 Support"
+                class="object-contain mb-4"
+              />
+            </h3>
+            <p class="mb-2 text-secondary">+00 0000 0000</p>
+            <p class="mb-2">
+              <a
+                href="mailto:emailaddress@hostitbuddy.com"
+                class="hover:underline text-secondary"
+                >emailaddress@hostitbuddy.com</a
+              >
+            </p>
+            <p class="mb-2 text-secondary">Insert Office Address Here</p>
+          </div>
+          <div class="container mx-auto md:col-span-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              <!-- General Section -->
+              <div>
+                <h3 class="text-xl font-semibold mb-4 text-secondary">
+                  General
+                </h3>
+                <ul>
+                  <li>
+                    <a href="#" class="hover:underline text-secondary">Home</a>
+                  </li>
+                  <li>
+                    <a href="#" class="hover:underline text-secondary"
+                      >About Us</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="hover:underline text-secondary">FAQ</a>
+                  </li>
+                  <li>
+                    <a href="#" class="hover:underline text-secondary"
+                      >Contact Us</a
+                    >
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Hosting Section -->
+              <div>
+                <h3 class="text-xl font-semibold mb-4 text-secondary">
+                  Domains
+                </h3>
+                <ul>
+                  <li>
+                    <a href="#" class="hover:underline text-secondary">Buy</a>
+                  </li>
+                  <li>
+                    <a href="#" class="hover:underline text-secondary"
+                      >Transfer</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="hover:underline text-secondary">Renew</a>
+                  </li>
+                  <li>
+                    <a href="#" class="hover:underline text-secondary">Whols</a>
+                  </li>
+                  <li>
+                    <a href="#" class="hover:underline text-secondary"
+                      >Backorder</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <!-- Hosting Section -->
+              <div>
+                <h3 class="text-xl font-semibold mb-4 text-secondary">
+                  Hosting
+                </h3>
+                <ul>
+                  <li>
+                    <a href="#" class="hover:underline text-secondary"
+                      >Web Hosting</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="hover:underline text-secondary"
+                      >Business Hosting</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="hover:underline text-secondary"
+                      >WordPress Hosting</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="hover:underline text-secondary"
+                      >Email Hosting</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="hover:underline text-secondary"
+                      >WooCommerce Online Store</a
+                    >
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Servers Section -->
+              <div>
+                <h3 class="text-xl font-semibold mb-4 text-secondary">
+                  Servers
+                </h3>
+                <ul>
+                  <li>
+                    <a href="#" class="hover:underline text-secondary"
+                      >cPanel Managed VPS</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="hover:underline text-secondary"
+                      >Windows VPS</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="hover:underline text-secondary"
+                      >Linux VPS</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="hover:underline text-secondary"
+                      >Linux Servers</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-8 border-t border-sectext-secondary pt-8">
+          <div class="flex flex-col md:flex-row justify-center">
+            <!-- <div class="mb-4 md:mb-0">
+              <a href="#" class="hover:underline text-secondary ">Our Policies</a> |
+              <a href="#" class="hover:underline text-secondary ">WhoIs</a> |
+              <a href="#" class="hover:underline text-secondary ">Backorder</a>
+            </div> -->
+            <div>
+              <p class="text-secondary">
+                &copy; 2024 Host It Buddy, all rights reserved...
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
     <script>
       const toggle = document.getElementById("toggle");
       const dot = document.querySelector(".dot");

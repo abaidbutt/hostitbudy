@@ -5,6 +5,18 @@
   @apply text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-black;
 } */
 
+.text-gradient {
+  background: conic-gradient(
+    from 52.45deg at 62.29% 32.17%,
+    #1a5a96 -35.36deg,
+    #52c29a 32.42deg,
+    #1a5a96 324.64deg,
+    #52c29a 392.42deg
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
 /* background: linear-gradient(to bottom right, #1a5a96, #52c29a); */
 .btn {
   padding: 20px 20px;

@@ -7,7 +7,146 @@
     <link rel="stylesheet" href="../build/tailwind.css" />
   </head>
   <body class="p-6">
-    <div class="max-w-4xl mx-auto bg-white p-6 rounded-lg shadow-lg">
+    <!-- ========== Header CONTENT ========== -->
+    <nav class="bg-[transparent] dark:bg-black dark:text-secondary">
+      <div
+        class="container mx-auto px-4 md:flex items-center gap-6 justify-between"
+      >
+        <!-- Logo -->
+        <div class="flex items-center justify-between md:w-auto w-full">
+          <a href="#" class="flex items-center py-5 px-2 flex-1">
+            <img
+              src="./assets/Logo.svg"
+              alt="24/7 Support"
+              class="object-contain mb-4"
+            />
+          </a>
+          <!-- Mobile Menu Button -->
+          <div class="md:hidden flex items-center">
+            <button class="mobile-menu-button">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+              >
+                <title>bars-3-bottom-left</title>
+                <g fill="none">
+                  <path
+                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25H12"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                </g>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <!-- Primary Navigation -->
+        <div
+          class="hidden md:flex md:flex-row flex-col items-center justify-start md:space-x-1 navigation-menu pb-3 md:pb-0 navigation-menu"
+        >
+          <a href="#" class="py-2 px-3 block hover:text-primary rounded"
+            >Domains</a
+          >
+          <a href="#" class="py-2 px-3 block hover:text-primary rounded"
+            >Hosting</a
+          >
+          <!-- Dropdown Menu -->
+          <div class="relative dropdown">
+            <button
+              class="dropdown-toggle py-2 px-3 hover:text-primary flex items-center gap-2 rounded"
+            >
+              <span class="pointer-events-none">Servers</span>
+            </button>
+            <div
+              class="dropdown-menu absolute hidden bg-primary divide-y text-white text-center rounded w-32 rounded-br-lg"
+            >
+              <a href="#" class="block px-6 py-2">Buy</a>
+              <a href="#" class="block px-6 py-2">Transfer</a>
+              <a href="#" class="block px-6 py-2">Renew</a>
+              <a href="#" class="block px-6 py-2">Whols</a>
+              <a href="#" class="block px-6 py-2">Backorder</a>
+            </div>
+          </div>
+          <a href="#" class="py-2 px-3 block hover:text-primary rounded"
+            >Support</a
+          >
+          <!-- Right Buttons -->
+          <div class="hidden md:flex items-center space-x-4">
+            <div class="mt-4 flex gap-4 sm:mt-0 sm:flex-row sm:items-center">
+              <button
+                class="btn inline-flex rounded-br-3xl px-3 py-3 border border-sectext-secondary"
+                type="button"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  class="w-6 h-6"
+                  stroke-width="1.5"
+                  stroke="url(#gradient)"
+                >
+                  <defs>
+                    <linearGradient
+                      id="gradient"
+                      x1="0%"
+                      y1="0%"
+                      x2="100%"
+                      y2="100%"
+                    >
+                      <stop offset="0%" stop-color="#1a5a96" />
+                      <stop offset="100%" stop-color="#52c29a" />
+                    </linearGradient>
+                  </defs>
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    fill="white"
+                    d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"
+                  />
+                </svg>
+              </button>
+
+              <button
+                class="btn px-8 py-3 flex items-center gap-1.5 rounded-br-3xl border border-sectext-secondary text-secondary transition hover:bg-sectext-secondaryhover:text-blue-600 focus:outline-none focus:ring"
+                type="button"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  class="w-6 h-6"
+                  stroke-width="1.5"
+                  stroke="url(#gradient)"
+                >
+                  <defs>
+                    <linearGradient
+                      id="gradient"
+                      x1="0%"
+                      y1="0%"
+                      x2="100%"
+                      y2="100%"
+                    >
+                      <stop offset="0%" stop-color="#1a5a96" />
+                      <stop offset="100%" stop-color="#52c29a" />
+                    </linearGradient>
+                  </defs>
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"
+                  />
+                </svg>
+                <span>Sign In</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="w-md mx-auto bg-white p-6">
       <h2 class="text-3xl font-bold mb-6">Checkout</h2>
       <div class="grid md:grid-cols-2 grid-cols-1 gap-4 mb-6">
         <!-- Sign In Section -->
@@ -125,100 +264,165 @@
         </div>
       </div>
     </div>
-    <div class="max-w-4xl mx-auto bg-white p-6 rounded-lg shadow-lg">
-      <h2 class="text-3xl font-bold mb-6">Checkout</h2>
-      <div class="grid md:grid-cols-2 grid-cols-1">
-        <!-- Payment Method Section -->
-        <div class="pr-6">
-          <h3 class="text-xl font-semibold mb-4">Payment Method</h3>
-          <form>
-            <div class="flex gap-2 items-center">
-              <div class="mb-4">
-                <input
-                  type="radio"
-                  id="visa"
-                  name="payment"
-                  class="mr-2"
-                  checked
-                />
-                <label for="visa" class="inline-flex items-center">
-                  <img
-                    src="https://img.icons8.com/color/48/000000/visa.png"
-                    alt="Visa"
-                    class="w-8 h-8 mr-2"
-                  />
-                  VISA
-                </label>
+
+    <!-- Footer -->
+    <footer class="bg-white shadow-xl mt-auto">
+      <div class="container mx-auto px-4 py-8">
+        <div class="grid grid-cols-1 md:grid-cols-12">
+          <!-- Contact Section -->
+          <div class="md:col-span-4">
+            <h3 class="text-3xl font-bold mb-4 text-gradient">
+              <img
+                src="./assets/Logo.svg"
+                alt="24/7 Support"
+                class="object-contain mb-4"
+              />
+            </h3>
+            <p class="mb-2 text-secondary">+00 0000 0000</p>
+            <p class="mb-2">
+              <a
+                href="mailto:emailaddress@hostitbuddy.com"
+                class="hover:underline text-secondary"
+                >emailaddress@hostitbuddy.com</a
+              >
+            </p>
+            <p class="mb-2 text-secondary">Insert Office Address Here</p>
+          </div>
+          <div class="container mx-auto md:col-span-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              <!-- General Section -->
+              <div>
+                <h3 class="text-xl font-semibold mb-4 text-secondary">
+                  General
+                </h3>
+                <ul>
+                  <li>
+                    <a href="#" class="hover:underline text-secondary">Home</a>
+                  </li>
+                  <li>
+                    <a href="#" class="hover:underline text-secondary"
+                      >About Us</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="hover:underline text-secondary">FAQ</a>
+                  </li>
+                  <li>
+                    <a href="#" class="hover:underline text-secondary"
+                      >Contact Us</a
+                    >
+                  </li>
+                </ul>
               </div>
-              <div class="mb-4">
-                <input type="radio" id="paynow" name="payment" class="mr-2" />
-                <label for="paynow" class="inline-flex items-center">
-                  <img
-                    src="https://img.icons8.com/color/48/000000/pay-now.png"
-                    alt="PayNow"
-                    class="w-8 h-8 mr-2"
-                  />
-                  PAYNOW
-                </label>
+
+              <!-- Hosting Section -->
+              <div>
+                <h3 class="text-xl font-semibold mb-4 text-secondary">
+                  Domains
+                </h3>
+                <ul>
+                  <li>
+                    <a href="#" class="hover:underline text-secondary">Buy</a>
+                  </li>
+                  <li>
+                    <a href="#" class="hover:underline text-secondary"
+                      >Transfer</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="hover:underline text-secondary">Renew</a>
+                  </li>
+                  <li>
+                    <a href="#" class="hover:underline text-secondary">Whols</a>
+                  </li>
+                  <li>
+                    <a href="#" class="hover:underline text-secondary"
+                      >Backorder</a
+                    >
+                  </li>
+                </ul>
               </div>
-              <div class="mb-4">
-                <input
-                  type="radio"
-                  id="bank_transfer"
-                  name="payment"
-                  class="mr-2"
-                />
-                <label for="bank_transfer" class="inline-flex items-center">
-                  Bank Transfer
-                </label>
+              <!-- Hosting Section -->
+              <div>
+                <h3 class="text-xl font-semibold mb-4 text-secondary">
+                  Hosting
+                </h3>
+                <ul>
+                  <li>
+                    <a href="#" class="hover:underline text-secondary"
+                      >Web Hosting</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="hover:underline text-secondary"
+                      >Business Hosting</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="hover:underline text-secondary"
+                      >WordPress Hosting</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="hover:underline text-secondary"
+                      >Email Hosting</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="hover:underline text-secondary"
+                      >WooCommerce Online Store</a
+                    >
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Servers Section -->
+              <div>
+                <h3 class="text-xl font-semibold mb-4 text-secondary">
+                  Servers
+                </h3>
+                <ul>
+                  <li>
+                    <a href="#" class="hover:underline text-secondary"
+                      >cPanel Managed VPS</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="hover:underline text-secondary"
+                      >Windows VPS</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="hover:underline text-secondary"
+                      >Linux VPS</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="hover:underline text-secondary"
+                      >Linux Servers</a
+                    >
+                  </li>
+                </ul>
               </div>
             </div>
-            <button
-              type="submit"
-              class="block px-6 py-3 text-lg font-semibold text-white bg-primary rounded-md rounded-br-lg shadow hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-            >
-              Pay
-            </button>
-          </form>
+          </div>
         </div>
-        <!-- Order Summary Section -->
-        <div
-          class="p-10 shadow-md rounded-lg border-2 rounded-br-3xl"
-          style="
-            background: linear-gradient(
-              140.9deg,
-              #f2fffd 27.61%,
-              #f9fdff 72.42%
-            );
-          "
-        >
-          <div class="flex justify-between items-end">
+
+        <div class="mt-8 border-t border-sectext-secondary pt-8">
+          <div class="flex flex-col md:flex-row justify-center">
+            <!-- <div class="mb-4 md:mb-0">
+              <a href="#" class="hover:underline text-secondary ">Our Policies</a> |
+              <a href="#" class="hover:underline text-secondary ">WhoIs</a> |
+              <a href="#" class="hover:underline text-secondary ">Backorder</a>
+            </div> -->
             <div>
-              <h3 class="text-5xl font-semibold text-secondary">Order</h3>
+              <p class="text-secondary">
+                &copy; 2024 Host It Buddy, all rights reserved...
+              </p>
             </div>
-            <p class="text-lg text-secondary mt-1">3 Items</p>
-          </div>
-          <hr class="my-8" />
-          <div class="mt-2 flex justify-between text-sm text-secondary">
-            <span class="text-lg">Subtotal</span>
-            <span class="text-lg">SG$146</span>
-          </div>
-          <div class="flex justify-between text-sm text-secondary">
-            <span class="text-lg">GST</span>
-            <span class="text-lg">SG$3.18</span>
-          </div>
-          <div class="flex justify-between text-sm text-secondary">
-            <span class="text-lg">Discount</span>
-            <span class="text-lg">- SG$0</span>
-          </div>
-          <div
-            class="mt-4 flex justify-between text-lg font-semibold text-secondary"
-          >
-            <span class="text-xl">Total</span>
-            <span class="text-3xl">SG$149.18</span>
           </div>
         </div>
       </div>
-    </div>
+    </footer>
   </body>
 </html>

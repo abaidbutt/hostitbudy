@@ -3,11 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Payment Successful</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
-      rel="stylesheet"
-    />
+    <title>FAQ</title>
+    <link rel="stylesheet" href="../build/tailwind.css" />
   </head>
   <body>
     <!-- ========== Header CONTENT ========== -->
@@ -149,76 +146,240 @@
         </div>
       </div>
     </nav>
-    <div
-      class="flex flex-col items-center justify-center min-h-screen py-2 w-full"
-      style="
-        background-image: url('./assets/order_back.png');
-        background-repeat: no-repeat;
-        background-position: center;
-      "
-    >
-      <!-- Success Message -->
-      <div class="p-6 text-center w-full max-w-lg">
-        <div class="mb-4 flex justify-center flex-col items-center">
+    <!-- Main Content -->
+    <section class="container mx-auto px-4 py-8">
+      <div class="p-6">
+        <!-- Search Section -->
+        <div class="mb-6 flex items-end gap-5">
+          <div class="flex rounded-md w-full items-center gap-2 relative">
+            <div
+              class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"
+            >
+              <svg
+                class="w-4 h-4 text-gray-900"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
+                ></path>
+              </svg>
+            </div>
+            <input
+              type="text"
+              name="q"
+              class="w-full p-3 pl-10 rounded-md border border-2 border-gray-300 dark:bg-gray-500 dark:text-gray-300 dark:border-none rounded-br-lg"
+              placeholder="specialdomain.com"
+            />
+            <button
+              class="bg-primary hover:bg-midnight-400 text-white font-bold py-4 px-5 round rounded-br-lg rounded-md"
+              type="submit"
+            >
+              <span>Search</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Availability Message -->
+        <div class="mb-6 p-4 text-primary rounded-lg flex items-center gap-5">
           <svg
-            width="86"
-            height="85"
-            viewBox="0 0 86 85"
-            fill="none"
             xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-6 h-6"
           >
             <path
-              d="M26.75 42.5L40.6786 54.1071L59.25 30.8929M43 75C38.732 75 34.5059 74.1594 30.5628 72.5261C26.6197 70.8928 23.0369 68.4989 20.019 65.481C17.0011 62.4631 14.6072 58.8803 12.9739 54.9372C11.3406 50.9941 10.5 46.768 10.5 42.5C10.5 38.232 11.3406 34.0059 12.9739 30.0628C14.6072 26.1197 17.0011 22.5369 20.019 19.519C23.0369 16.5011 26.6197 14.1072 30.5628 12.4739C34.5059 10.8406 38.732 10 43 10C51.6195 10 59.886 13.4241 65.981 19.519C72.0759 25.614 75.5 33.8805 75.5 42.5C75.5 51.1195 72.0759 59.386 65.981 65.481C59.886 71.5759 51.6195 75 43 75Z"
-              stroke="#4AB39A"
-              stroke-width="4"
               stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
             />
           </svg>
 
-          <h2 class="mt-2 text-2xl font-semibold text-gray-700">
-            Payment Successful
-          </h2>
+          <p>Perfect! Your domain is available on Host It Buddy.</p>
+        </div>
+        <!-- Not Availability Message -->
+        <div class="mb-6 p-4 text-secondary rounded-lg flex items-center gap-5">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="size-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"
+            />
+          </svg>
+
+          <p>
+            Hmm...seems like your domain is taken. Let us help you with that..
+          </p>
         </div>
 
-        <!-- Order Summary -->
+        <!-- Features Section -->
         <div
-          class="p-10 shadow-md rounded-lg border-2 rounded-br-3xl"
-          style="
-            background: linear-gradient(
-              140.9deg,
-              #f2fffd 27.61%,
-              #f9fdff 72.42%
-            );
-          "
+          class="shadow-xl md:px-12 sm:px-8 px-6 md:py-10 sm:py-8 py-6 rounded rounded-br-lg ring-2 ring-setext-secondary container"
         >
-          <div class="flex justify-between items-end">
+          <div class="flex justify-end items-end w-full">
+            <img
+              src="./assets/star.svg"
+              alt="24/7 Support"
+              class="object-contain mb-4"
+            />
+          </div>
+          <div class="grid md:grid-cols-2 grid-cols-1">
             <div>
-              <h3 class="text-5xl font-semibold text-gray-800">Order</h3>
+              <p class="text-gradient mt-2 sm:text-3xl text-2xl md:text-5xl">
+                specialdomain.com
+              </p>
+              <p class="md:text-2xl sm:text-lg text-md text-primary mt-2">
+                From $5.99/month
+              </p>
             </div>
-            <p class="text-lg text-gray-600 mt-1">3 Items</p>
+            <div class="">
+              <ul class="list-disc">
+                <li class="text-md text-gray-900 mb-2">
+                  Feature details here explained in detail
+                </li>
+                <li class="text-md text-gray-900 mb-2">
+                  More Feature details here explained in detail
+                </li>
+                <li class="text-md text-gray-900 mb-2">
+                  Feature details here explained in detail
+                </li>
+              </ul>
+
+              <button
+                class="mt-4 bg-primary w-full text-white py-2 px-4 rounded-br-lg rounded-md"
+              >
+                Get It Now
+              </button>
+            </div>
           </div>
-          <hr class="my-8" />
-          <div class="mt-2 flex justify-between text-sm text-gray-600">
-            <span class="text-lg">Subtotal</span>
-            <span class="text-lg">SG$146</span>
+        </div>
+
+        <!-- Domain List Section -->
+        <div class="mt-6">
+          <div class="flex space-x-4 mb-4">
+            <button
+              class="bg-white border-b text-gray-700 py-2 px-4 rounded-br-3xl"
+            >
+              All
+            </button>
+            <button
+              class="bg-white border-b text-gray-700 py-2 px-4 rounded-br-3xl"
+            >
+              Favourites
+            </button>
           </div>
-          <div class="flex justify-between text-sm text-gray-600">
-            <span class="text-lg">GST</span>
-            <span class="text-lg">SG$3.18</span>
+          <div class="grid grid-cols-1 gap-4">
+            <!-- Domain Item -->
+            <div class="p-4 w-full flex justify-between items-center">
+              <div class="flex items-center gap-2">
+                <button
+                  class="btn inline-flex rounded-br-3xl p-1 border border-gray-200"
+                  type="button"
+                  style="padding: 10px"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    class="w-6 h-6"
+                    stroke-width="1.5"
+                    stroke="url(#gradient)"
+                  >
+                    <defs>
+                      <linearGradient
+                        id="gradient"
+                        x1="0%"
+                        y1="0%"
+                        x2="100%"
+                        y2="100%"
+                      >
+                        <stop offset="0%" stop-color="#1a5a96" />
+                        <stop offset="100%" stop-color="#52c29a" />
+                      </linearGradient>
+                    </defs>
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      fill="white"
+                      d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"
+                    />
+                  </svg>
+                </button>
+
+                <div>
+                  <p class="text-lg font-semibold">specialdomain.net</p>
+                  <p class="text-primary">$39.00/year</p>
+                </div>
+              </div>
+              <img
+                src="./assets/star.svg"
+                alt="24/7 Support"
+                class="w-7 object-contain mb-4"
+              />
+            </div>
           </div>
-          <div class="flex justify-between text-sm text-gray-600">
-            <span class="text-lg">Discount</span>
-            <span class="text-lg">- SG$0</span>
+          <div class="flex justify-center">
+            <button
+              class="mt-4 px-5 bg-primary text-white py-2 rounded-br-lg rounded-md"
+            >
+              View More
+            </button>
           </div>
-          <div
-            class="mt-4 flex justify-between text-lg font-semibold text-gray-800"
-          >
-            <span class="text-xl">Total</span>
-            <span class="text-3xl">SG$149.18</span>
+        </div>
+
+        <!-- Help Section -->
+      </div>
+    </section>
+    <section class="py-12">
+      <div
+        class="container mx-auto px-4 bg-background rounded-md rounded-br-lg shadow-lg bg-gradient-to-r from-[#f2fffd] to-[#f9fdff]"
+      >
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          <!-- Left Side (Image) -->
+          <div class="flex justify-center">
+            <img src="./assets/ready.png" alt="Help" class="w-full max-w-lg" />
+          </div>
+
+          <!-- Right Side (Text and Buttons) -->
+          <div class="flex flex-col">
+            <h2 class="text-3xl font-semibold text-secondary mb-4">
+              Not sure what you need? <br />We are ready to help.
+            </h2>
+            <p class="text-lg text-secondary mb-6">
+              Take Our Needs Assessment and Let’s Connect.
+            </p>
+            <div class="flex w-2/5 justify-start flex-col items-start gap-5">
+              <a
+                href="#"
+                class="block w-full text-center py-3 text-lg font-semibold text-white bg-primary rounded-md rounded-br-lg shadow hover:bg-white hover:text-primary hover:border hover:border-primary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
+                >Take Our Needs Assessment</a
+              >
+
+              <a
+                href="#"
+                class="block text-center text-gradient w-full py-3 text-lg font-semibold text-primary border border-primary rounded-md rounded-br-lg shadow hover:bg-primary hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                >Let’s Connect</a
+              >
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
+
     <!-- Footer -->
     <footer class="bg-white shadow-xl mt-auto">
       <div class="container mx-auto px-4 py-8">
