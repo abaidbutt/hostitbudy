@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FAQ</title>
-    <link rel="stylesheet" href="../build/tailwind.css" />
+    <title>Buy</title>
+    <link rel="stylesheet" href="./tailwind.css" />
   </head>
   <body>
     <!-- ========== Header CONTENT ========== -->
@@ -147,8 +147,8 @@
       </div>
     </nav>
     <!-- Main Content -->
-    <section class="container mx-auto px-4 py-8">
-      <div class="p-6">
+    <section class="container mx-auto md:px-4 px-2 py-8">
+      <div class="">
         <!-- Search Section -->
         <div class="mb-6 flex items-end gap-5">
           <div class="flex rounded-md w-full items-center gap-2 relative">
@@ -187,14 +187,16 @@
         </div>
 
         <!-- Availability Message -->
-        <div class="mb-6 p-4 text-primary rounded-lg flex items-center gap-5">
+        <div
+          class="mb-6 md:p-4 p-2 text-primary rounded-lg flex items-center gap-5"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
             stroke-width="1.5"
             stroke="currentColor"
-            class="w-6 h-6"
+            class="w-8 h-8"
           >
             <path
               stroke-linecap="round"
@@ -206,14 +208,16 @@
           <p>Perfect! Your domain is available on Host It Buddy.</p>
         </div>
         <!-- Not Availability Message -->
-        <div class="mb-6 p-4 text-secondary rounded-lg flex items-center gap-5">
+        <div
+          class="mb-6 md:p-4 p-2 text-secondary rounded-lg flex items-center gap-5"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
             stroke-width="1.5"
             stroke="currentColor"
-            class="size-6"
+            class="w-8 h-8"
           >
             <path
               stroke-linecap="round"
@@ -229,7 +233,7 @@
 
         <!-- Features Section -->
         <div
-          class="shadow-xl md:px-12 sm:px-8 px-6 md:py-10 sm:py-8 py-6 rounded rounded-br-lg ring-2 ring-setext-secondary container"
+          class="shadow-xl btn md:px-12 sm:px-8 px-6 md:py-10 sm:py-8 py-6 rounded rounded-br-lg container"
         >
           <div class="flex justify-end items-end w-full">
             <img
@@ -239,15 +243,15 @@
             />
           </div>
           <div class="grid md:grid-cols-2 grid-cols-1">
-            <div>
-              <p class="text-gradient mt-2 sm:text-3xl text-2xl md:text-5xl">
+            <div class="">
+              <p class="text-gradient mt-2 sm:text-3xl text-3xl md:text-5xl">
                 specialdomain.com
               </p>
               <p class="md:text-2xl sm:text-lg text-md text-primary mt-2">
                 From $5.99/month
               </p>
             </div>
-            <div class="">
+            <div class="md:w-3/4">
               <ul class="list-disc">
                 <li class="text-md text-gray-900 mb-2">
                   Feature details here explained in detail
@@ -273,51 +277,23 @@
         <div class="mt-6">
           <div class="flex space-x-4 mb-4">
             <button
-              class="bg-white border-b text-gray-700 py-2 px-4 rounded-br-3xl"
+              class="border-b border-b-secondary text-gray-700 py-2 px-4 font-semibold"
             >
               All
             </button>
-            <button
-              class="bg-white border-b text-gray-700 py-2 px-4 rounded-br-3xl"
-            >
-              Favourites
-            </button>
+            <button class="border-b text-gray-900 py-2 px-4">Favourites</button>
           </div>
           <div class="grid grid-cols-1 gap-4">
             <!-- Domain Item -->
-            <div class="p-4 w-full flex justify-between items-center">
+            <div
+              class="p-4 w-full flex justify-between items-center flex-wrap border-b border-gray-300"
+            >
               <div class="flex items-center gap-2">
                 <button
-                  class="btn inline-flex rounded-br-3xl p-1 border border-gray-200"
+                  class="btn inline-flex rounded-br-3xl p-3 border border-gray-200"
                   type="button"
-                  style="padding: 10px"
                 >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    class="w-6 h-6"
-                    stroke-width="1.5"
-                    stroke="url(#gradient)"
-                  >
-                    <defs>
-                      <linearGradient
-                        id="gradient"
-                        x1="0%"
-                        y1="0%"
-                        x2="100%"
-                        y2="100%"
-                      >
-                        <stop offset="0%" stop-color="#1a5a96" />
-                        <stop offset="100%" stop-color="#52c29a" />
-                      </linearGradient>
-                    </defs>
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      fill="white"
-                      d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"
-                    />
-                  </svg>
+                  <img src="./assets/buy.svg" />
                 </button>
 
                 <div>
@@ -325,16 +301,66 @@
                   <p class="text-primary">$39.00/year</p>
                 </div>
               </div>
-              <img
-                src="./assets/star.svg"
-                alt="24/7 Support"
-                class="w-7 object-contain mb-4"
-              />
+              <button class="inline-flex" type="button">
+                <img
+                  src="./assets/star.svg"
+                  alt="24/7 Support"
+                  class="w-7 object-contain mb-4"
+                />
+              </button>
+            </div>
+            <div
+              class="p-4 w-full flex justify-between items-center flex-wrap border-b border-gray-300"
+            >
+              <div class="flex items-center gap-2">
+                <button
+                  class="btn inline-flex rounded-br-3xl p-3 border border-gray-200"
+                  type="button"
+                >
+                  <img src="./assets/buy.svg" />
+                </button>
+
+                <div>
+                  <p class="text-lg font-semibold">specialdomain.net</p>
+                  <p class="text-primary">$39.00/year</p>
+                </div>
+              </div>
+              <button class="inline-flex" type="button">
+                <img
+                  src="./assets/star.svg"
+                  alt="24/7 Support"
+                  class="w-7 object-contain mb-4"
+                />
+              </button>
+            </div>
+            <div
+              class="p-4 w-full flex justify-between items-center flex-wrap border-b border-gray-300"
+            >
+              <div class="flex items-center gap-2">
+                <button
+                  class="btn inline-flex rounded-br-3xl p-3 border border-gray-200"
+                  type="button"
+                >
+                  <img src="./assets/buy.svg" />
+                </button>
+
+                <div>
+                  <p class="text-lg font-semibold">specialdomain.net</p>
+                  <p class="text-primary">$39.00/year</p>
+                </div>
+              </div>
+              <button class="inline-flex" type="button">
+                <img
+                  src="./assets/star_fill.svg"
+                  alt="24/7 Support"
+                  class="w-7 object-contain mb-4"
+                />
+              </button>
             </div>
           </div>
           <div class="flex justify-center">
             <button
-              class="mt-4 px-5 bg-primary text-white py-2 rounded-br-lg rounded-md"
+              class="mt-4 px-5 py-3 border border-primary text-primary py-2 rounded-br-lg rounded-md"
             >
               View More
             </button>
@@ -346,7 +372,7 @@
     </section>
     <section class="py-12">
       <div
-        class="container mx-auto px-4 bg-background rounded-md rounded-br-lg shadow-lg bg-gradient-to-r from-[#f2fffd] to-[#f9fdff]"
+        class="container mx-auto md:px-4 px-2 bg-background rounded-md rounded-br-lg shadow-lg bg-gradient-to-r from-[#f2fffd] to-[#f9fdff] p-4"
       >
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <!-- Left Side (Image) -->
@@ -362,10 +388,13 @@
             <p class="text-lg text-secondary mb-6">
               Take Our Needs Assessment and Let’s Connect.
             </p>
-            <div class="flex w-2/5 justify-start flex-col items-start gap-5">
+            <div
+              class="flex md:w-3/4 justify-start flex-col items-start gap-5"
+              style="padding-right: 50px"
+            >
               <a
                 href="#"
-                class="block w-full text-center py-3 text-lg font-semibold text-white bg-primary rounded-md rounded-br-lg shadow hover:bg-white hover:text-primary hover:border hover:border-primary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
+                class="block w-full text-center py-3 text-lg font-semibold text-white bg-primary rounded-md rounded-br-lg shadow hover:bg-white hover:text-primary border border-primary focus:outline-none"
                 >Take Our Needs Assessment</a
               >
 

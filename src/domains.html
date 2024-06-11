@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Buddy</title>
 
-    <link rel="stylesheet" href="../build/tailwind.css" />
+    <link rel="stylesheet" href="./tailwind.css" />
     <style>
       /* Ensure dropdowns are hidden by default */
       .dropdown-menu {
@@ -162,7 +162,7 @@
     <div class="relative h-screen text-center text-white">
       <div
         class="bg-transparent h-[60rem] bg-center bg-no-repeat bg-contain"
-        style="background-image: url('./assets/order_back.png')"
+        style="background-image: url('./assets/main_back.png')"
       >
         <div class="mx-auto flex flex-col items-center py-12 sm:py-24">
           <div
@@ -238,10 +238,10 @@
               alt="24/7 Support"
               class="w-20 h-20 object-contain mb-4"
             />
-            <h3 class="text-xl font-semibold text-secondary">
+            <h3 class="text-2xl font-semibold text-secondary">
               The Tip’s main point explained here
             </h3>
-            <p class="text-md text-secondary">
+            <p class="text-sm text-secondary">
               Describe and explain the point here and here describe and explain
               the point here describe and explain the main
             </p>
@@ -253,10 +253,10 @@
               alt="99.9% Uptime"
               class="w-20 h-20 object-contain mb-4"
             />
-            <h3 class="text-xl font-semibold text-secondary">
+            <h3 class="text-2xl font-semibold text-secondary">
               The Tip’s main point explained here
             </h3>
-            <p class="text-md text-secondary">
+            <p class="text-sm text-secondary">
               Describe and explain the point here and here describe and explain
               the point here describe and explain the main
             </p>
@@ -268,10 +268,10 @@
               alt="Expert Tech"
               class="w-20 h-20 object-contain mb-4"
             />
-            <h3 class="text-xl font-semibold text-secondary">
+            <h3 class="text-2xl font-semibold text-secondary">
               The Tip’s main point explained here
             </h3>
-            <p class="text-md text-secondary">
+            <p class="text-sm text-secondary">
               Describe and explain the point here and here describe and explain
               the point here describe and explain the main
             </p>
@@ -279,18 +279,18 @@
         </div>
 
         <!-- Lower Row -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-10 mx-auto">
           <!-- Component 4 -->
           <div class="flex flex-col items-center p-4 rounded-lg">
             <img
-              src="security.svg"
+              src="./assets/security.svg"
               alt="Highly Secure"
               class="w-20 h-20 object-contain mb-4"
             />
-            <h3 class="text-xl font-semibold text-secondary">
+            <h3 class="text-2xl font-semibold text-secondary">
               The Tip’s main point explained here
             </h3>
-            <p class="text-md text-secondary">
+            <p class="text-sm text-secondary">
               Describe and explain the point here and here describe and explain
               the point here describe and explain the main
             </p>
@@ -298,14 +298,14 @@
           <!-- Component 5 -->
           <div class="flex flex-col items-center p-4 rounded-lg">
             <img
-              src="server.svg"
+              src="./assets/server.svg"
               alt="Fast Servers"
               class="w-20 h-20 object-contain mb-4"
             />
-            <h3 class="text-xl font-semibold text-secondary">
+            <h3 class="text-2xl font-semibold text-secondary">
               The Tip’s main point explained here
             </h3>
-            <p class="text-md text-secondary">
+            <p class="text-sm text-secondary">
               Describe and explain the point here and here describe and explain
               the point here describe and explain the main
             </p>
@@ -324,8 +324,8 @@
               Why buy a domain with us?
             </h2>
 
-            <div class="flex justify-start flex-col items-start gap-5">
-              <ul role="list" class="mb-8 space-y-4 text-center flex-1">
+            <div class="mb-8">
+              <ul role="list" class="list-disc space-y-4">
                 <li class="space-x-3 text-secondary">
                   Point explanation documented here for users to see and read
                 </li>
@@ -374,7 +374,7 @@
     <!-- ==========  FAQ CONTENT ========== -->
 
     <div
-      class="container-md bg-white px-6 pt-10 pb-8 mt-8 shadow-xl sm:px-10 rounded rounded-br-lg mx-auto"
+      class="container mx-auto bg-white px-6 pt-10 pb-8 mt-8 shadow-md sm:px-10 rounded-md rounded-br-lg mx-auto"
     >
       <div class="px-5">
         <div class="flex flex-col items-center">
@@ -594,7 +594,7 @@
 
     <section class="py-12">
       <div
-        class="container mx-auto px-4 bg-background rounded-md rounded-br-lg shadow-lg bg-gradient-to-r from-[#f2fffd] to-[#f9fdff]"
+        class="container mx-auto px-4 bg-background rounded-md rounded-br-lg shadow-lg bg-gradient-to-r from-[#f2fffd] to-[#f9fdff] p-4"
       >
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <!-- Left Side (Image) -->
@@ -610,16 +610,18 @@
             <p class="text-lg text-secondary mb-6">
               Take Our Needs Assessment and Let’s Connect.
             </p>
-            <div class="flex w-2/5 justify-start flex-col items-start gap-5">
+            <div
+              class="flex justify-start flex-col items-start gap-5 md:w-3/4 px-auto"
+            >
               <a
                 href="#"
-                class="block w-full text-center py-3 text-lg font-semibold text-white bg-primary rounded-md rounded-br-lg shadow hover:bg-white hover:text-primary hover:border hover:border-primary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
+                class="block w-full text-center py-3 text-lg font-semibold text-white bg-primary rounded-md rounded-br-lg shadow hover:bg-white hover:text-primary border border-primary focus:outline-none focus:ring-primary"
                 >Take Our Needs Assessment</a
               >
 
               <a
                 href="#"
-                class="block text-center text-gradient w-full py-3 text-lg font-semibold text-primary border border-primary rounded-md rounded-br-lg shadow hover:bg-primary hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                class="block w-full text-center text-gradient py-3 text-lg font-semibold text-primary border border-primary rounded-md rounded-br-lg shadow hover:bg-primary hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
                 >Let’s Connect</a
               >
             </div>
