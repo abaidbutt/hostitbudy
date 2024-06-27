@@ -4,6 +4,36 @@
 /* .heading-1 {
   @apply text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-black;
 } */
+/* main.css */
+
+/* Define the custom font */
+@font-face {
+  font-family: "LeagueSpartan";
+  src: url("./assets/LeagueSpartan.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Apply the custom font to the entire body */
+body {
+  font-family: "LeagueSpartan", sans-serif;
+}
+
+/* You can add more styles below */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "LeagueSpartan", sans-serif;
+  font-weight: bold;
+}
+
+p {
+  font-family: "LeagueSpartan", sans-serif;
+  font-weight: normal;
+}
 
 .text-gradient {
   background: conic-gradient(

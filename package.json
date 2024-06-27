@@ -5,7 +5,7 @@
     "tailwind:watch": "tailwindcss -i ./src/main.css -o ./src/tailwind.css --watch",
     "serve": "live-server ./",
     "start": "npm run serve",
-    "build": "tailwindcss -i ./src/main.css -o ./src/tailwind.css --minify"
+    "build": "npx tailwindcss -i ./src/main.css -o ./src/tailwind.css --minify"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.19",

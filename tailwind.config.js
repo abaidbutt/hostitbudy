@@ -1,6 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./src/**/*.{html,js}", "./src/*.html"],
+  variants: {
+    display: ["responsive", "group-hover", "group-focus"],
+  },
   theme: {
     borderRadius: {
       none: "0",

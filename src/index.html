@@ -59,21 +59,35 @@
         <div
           class="hidden md:flex md:flex-row flex-col items-center justify-start md:space-x-1 navigation-menu pb-3 md:pb-0 navigation-menu"
         >
-          <a href="#" class="py-2 px-3 block hover:text-primary rounded"
-            >Domains</a
-          >
+          <!-- Dropdown Menu for Domains -->
+          <div class="relative group">
+            <button
+              class="py-2 px-3 hover:text-primary flex items-center gap-2 rounded"
+            >
+              <span class="pointer-events-none">Domains</span>
+            </button>
+            <div
+              class="absolute hidden bg-primary group-hover:block text-white text-center rounded w-32 rounded-br-lg px-3 divide-y"
+            >
+              <a href="#" class="block px-6 py-2">Buy</a> 
+              <a href="#" class="block px-6 py-2">Transfer</a>
+              <a href="#" class="block px-6 py-2">Renew</a>
+              <a href="#" class="block px-6 py-2">Whols</a>
+              <a href="#" class="block px-6 py-2">Backorder</a>
+            </div>
+          </div>
           <a href="#" class="py-2 px-3 block hover:text-primary rounded"
             >Hosting</a
           >
-          <!-- Dropdown Menu -->
-          <div class="relative dropdown">
+          <!-- Dropdown Menu for Servers -->
+          <div class="relative group">
             <button
-              class="dropdown-toggle py-2 px-3 hover:text-primary flex items-center gap-2 rounded"
+              class="py-2 px-3 hover:text-primary flex items-center gap-2 rounded"
             >
               <span class="pointer-events-none">Servers</span>
             </button>
             <div
-              class="dropdown-menu absolute hidden bg-primary divide-y text-white text-center rounded w-32 rounded-br-lg"
+              class="absolute hidden bg-primary group-hover:block divide-y text-white text-center rounded w-32 rounded-br-lg"
             >
               <a href="#" class="block px-6 py-2">Buy</a>
               <a href="#" class="block px-6 py-2">Transfer</a>
@@ -82,6 +96,7 @@
               <a href="#" class="block px-6 py-2">Backorder</a>
             </div>
           </div>
+
           <a href="#" class="py-2 px-3 block hover:text-primary rounded"
             >Support</a
           >
@@ -116,12 +131,11 @@
                     stroke-linejoin="round"
                     fill="white"
                     d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"
-                  />
+                  ></path>
                 </svg>
               </button>
-
               <button
-                class="btn px-8 py-3 flex items-center gap-1.5 rounded-br-3xl border border-sectext-secondary text-secondary transition hover:bg-sectext-secondaryhover:text-blue-600 focus:outline-none focus:ring"
+                class="btn px-8 py-3 flex items-center gap-1.5 rounded-br-3xl border border-sectext-secondary text-secondary transition hover:bg-sectext-secondary hover:text-blue-600 focus:outline-none focus:ring"
                 type="button"
               >
                 <svg
@@ -133,13 +147,7 @@
                   stroke="url(#gradient)"
                 >
                   <defs>
-                    <linearGradient
-                      id="gradient"
-                      x1="0%"
-                      y1="0%"
-                      x2="100%"
-                      y2="100%"
-                    >
+                    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%">
                       <stop offset="0%" stop-color="#1a5a96" />
                       <stop offset="100%" stop-color="#52c29a" />
                     </linearGradient>
@@ -148,7 +156,7 @@
                     stroke-linecap="round"
                     stroke-linejoin="round"
                     d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"
-                  />
+                  ></path>
                 </svg>
                 <span>Sign In</span>
               </button>
@@ -159,12 +167,12 @@
     </nav>
     <!-- ==========  MAIN CONTENT ========== -->
 
-    <div class="relative h-screen text-center text-white">
+    <div class="relative text-center text-white">
       <div
-        class="bg-transparent h-[60rem] bg-center bg-no-repeat bg-contain"
+        class="bg-transparent md:h-[60rem] h-[15rem]  bg-center bg-no-repeat md:bg-contain bg-cover  flex items-center flex-col justify-center"
         style="background-image: url('./assets/main_back.png')"
       >
-        <div class="mx-auto flex flex-col items-center py-12 sm:py-24">
+        <div class="mx-auto flex flex-col items-center  justify-center w-full">
           <div
             class="w-11/12 sm:w-2/3 lg:flex justify-center items-center flex-col mb-5 sm:mb-10"
           >
@@ -223,9 +231,9 @@
     </div>
     <!-- ==========  Pricing CONTENT ========== -->
     <section class="">
-      <div class="px-4 py-12 mx-auto lg:py-24 lg:px-6">
+      <div class="max-w-6xl mx-auto">
         <div
-          class="flex flex-col items-center leading-7 text-center text-secondary border-0 border-sectext-secondary my-5"
+          class="flex flex-col items-center leading-7 text-center text-secondary py-8"
         >
           <h2
             id="pricing"
@@ -233,16 +241,14 @@
           >
             We got your back
           </h2>
-          <p
-            class="box-border mt-2 text-xl text-secondary border-solid sm:text-2xl"
-          ></p>
+          
         </div>
-        <div class="flex justify-center items-center">
+        <div class="flex justify-center items-center my-5">
           <div
-            class="space-y-8 lg:grid lg:grid-cols-3 sm:gap-6 xl:gap-10 lg:space-y-0"
+            class="space-y-8 lg:grid lg:grid-cols-3 sm:grid-cols-2 sm:gap-6 xl:gap-10 lg:space-y-0"
           >
             <div
-              class="btn flex flex-col max-w-sm p-6 text-center text-secondary border border-sectext-secondary rounded-md rounded-br-lg shadow dark:border-sectext-secondary xl:p-8 dark:bg-sectext-secondary dark:text-white"
+              class="btn flex flex-col max-w-sm p-8 py-12 text-center text-secondary border border-sectext-secondary rounded-md rounded-br-lg shadow dark:border-sectext-secondary  dark:bg-sectext-secondary dark:text-white"
             >
               <h3
                 class="mb-2 sm:text-3xl text-2xl md:text-5xl font-semibold text-gradient"
@@ -251,7 +257,7 @@
               </h3>
 
               <div class="flex items-baseline justify-center my-2">
-                <span class="mr-2 text-2xl font-semibold text-secondary"
+                <span class="mr-2 text-2xl text-secondary"
                   >From $5.99 /month</span
                 >
               </div>
@@ -287,7 +293,7 @@
             </div>
 
             <div
-              class="btn flex flex-col max-w-sm p-6 text-center text-secondary border border-sectext-secondary rounded-md rounded-br-lg shadow dark:border-sectext-secondary xl:p-8 dark:bg-sectext-secondary dark:text-white"
+              class="btn flex flex-col max-w-sm p-8 py-12 text-center text-secondary border border-sectext-secondary rounded-md rounded-br-lg shadow dark:border-sectext-secondary  dark:bg-sectext-secondary dark:text-white"
             >
               <h3
                 class="mb-2 sm:text-3xl text-2xl md:text-5xl font-semibold text-gradient"
@@ -296,7 +302,7 @@
               </h3>
 
               <div class="flex items-baseline justify-center my-2">
-                <span class="mr-2 text-2xl font-semibold text-secondary"
+                <span class="mr-2 text-2xl text-secondary"
                   >From $5.99 /month</span
                 >
               </div>
@@ -332,7 +338,7 @@
             </div>
 
             <div
-              class="btn flex flex-col max-w-sm p-6 text-center text-secondary border border-sectext-secondary rounded-md rounded-br-lg shadow dark:border-sectext-secondary xl:p-8 dark:bg-sectext-secondary dark:text-white"
+              class="btn flex flex-col max-w-sm p-8 py-12 text-center text-secondary border border-sectext-secondary rounded-md rounded-br-lg shadow dark:border-sectext-secondary  dark:bg-sectext-secondary dark:text-white"
             >
               <h3
                 class="mb-2 sm:text-3xl text-2xl md:text-5xl font-semibold text-gradient"
@@ -341,7 +347,7 @@
               </h3>
 
               <div class="flex items-baseline justify-center my-2">
-                <span class="mr-2 text-2xl font-semibold text-secondary"
+                <span class="mr-2 text-2xl text-secondary"
                   >From $5.99 per task</span
                 >
               </div>
@@ -381,7 +387,7 @@
       </div>
     </section>
     <!-- ==========  CHOOSE CONTENT ========== -->
-    <section class="py-12 text-center max-w-3xl mx-auto">
+    <section class="py-12 my-8 text-center max-w-3xl mx-auto">
       <h2 class="text-3xl font-semibold text-secondary mb-8">
         Why Choose Host It Buddy?
       </h2>
@@ -488,7 +494,7 @@
           <!-- Left Side (Image) -->
 
           <div class="flex flex-col">
-            <h2 class="text-3xl font-semibold text-secondary mb-4">
+            <h2 class="md:text-5xl text-3xl font-semibold text-secondary mb-6">
               A tagline about Host <br />It Buddy can be here.
             </h2>
 
@@ -505,7 +511,7 @@
             <div
               class="bg-blue-500 text-white p-4 h-28 w-full bg-sectext-secondary rounded-md"
               style="
-                background-image: url('https://source.unsplash.com/random');
+                background-image: url('./assets/back_side.png');
                 background-repeat: no-repeat;
                 background-size: cover;
               "
@@ -516,7 +522,7 @@
               <div
                 class="md:w-40 w-24 bg-gray-000 text-white p-8 rounded-md"
                 style="
-                  background-image: url('https://source.unsplash.com/random');
+                  background-image: url('./assets/back_side.png');
                   background-repeat: no-repeat;
                   background-size: cover;
                 "
@@ -527,14 +533,14 @@
                 <div
                   class="bg-white rounded-md shadow-md h-32"
                   style="
-                    background-image: url('https://source.unsplash.com/random');
+                    background-image: url('./assets/back_side.png');
                     background-repeat: no-repeat;
                     background-size: cover;
                   "
                 ></div>
                 <div
                   class="bg-white rounded-md shadow-md h-32"
-                  style="background-image: url('https://source.unsplash.com/random');background-repeat: no-repeat;background-size: cover;"
+                  style="background-image: url('./assets/back_side.png');background-repeat: no-repeat;background-size: cover;"
                 ></div>
               </div>
             </div>

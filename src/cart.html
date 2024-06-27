@@ -57,21 +57,15 @@
         <div
           class="hidden md:flex md:flex-row flex-col items-center justify-start md:space-x-1 navigation-menu pb-3 md:pb-0 navigation-menu"
         >
-          <a href="#" class="py-2 px-3 block hover:text-primary rounded"
-            >Domains</a
-          >
-          <a href="#" class="py-2 px-3 block hover:text-primary rounded"
-            >Hosting</a
-          >
-          <!-- Dropdown Menu -->
-          <div class="relative dropdown">
+          <!-- Dropdown Menu for Domains -->
+          <div class="relative group">
             <button
-              class="dropdown-toggle py-2 px-3 hover:text-primary flex items-center gap-2 rounded"
+              class="py-2 px-3 hover:text-primary flex items-center gap-2 rounded"
             >
-              <span class="pointer-events-none">Servers</span>
+              <span class="pointer-events-none">Domains</span>
             </button>
             <div
-              class="dropdown-menu absolute hidden bg-primary divide-y text-white text-center rounded w-32 rounded-br-lg"
+              class="absolute hidden bg-primary group-hover:block text-white text-center rounded w-32 rounded-br-lg px-3 divide-y"
             >
               <a href="#" class="block px-6 py-2">Buy</a>
               <a href="#" class="block px-6 py-2">Transfer</a>
@@ -80,6 +74,27 @@
               <a href="#" class="block px-6 py-2">Backorder</a>
             </div>
           </div>
+          <a href="#" class="py-2 px-3 block hover:text-primary rounded"
+            >Hosting</a
+          >
+          <!-- Dropdown Menu for Servers -->
+          <div class="relative group">
+            <button
+              class="py-2 px-3 hover:text-primary flex items-center gap-2 rounded"
+            >
+              <span class="pointer-events-none">Servers</span>
+            </button>
+            <div
+              class="absolute hidden bg-primary group-hover:block divide-y text-white text-center rounded w-32 rounded-br-lg"
+            >
+              <a href="#" class="block px-6 py-2">Buy</a>
+              <a href="#" class="block px-6 py-2">Transfer</a>
+              <a href="#" class="block px-6 py-2">Renew</a>
+              <a href="#" class="block px-6 py-2">Whols</a>
+              <a href="#" class="block px-6 py-2">Backorder</a>
+            </div>
+          </div>
+
           <a href="#" class="py-2 px-3 block hover:text-primary rounded"
             >Support</a
           >
@@ -114,12 +129,11 @@
                     stroke-linejoin="round"
                     fill="white"
                     d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"
-                  />
+                  ></path>
                 </svg>
               </button>
-
               <button
-                class="btn px-8 py-3 flex items-center gap-1.5 rounded-br-3xl border border-sectext-secondary text-secondary transition hover:bg-sectext-secondaryhover:text-blue-600 focus:outline-none focus:ring"
+                class="btn px-8 py-3 flex items-center gap-1.5 rounded-br-3xl border border-sectext-secondary text-secondary transition hover:bg-sectext-secondary hover:text-blue-600 focus:outline-none focus:ring"
                 type="button"
               >
                 <svg
@@ -131,13 +145,7 @@
                   stroke="url(#gradient)"
                 >
                   <defs>
-                    <linearGradient
-                      id="gradient"
-                      x1="0%"
-                      y1="0%"
-                      x2="100%"
-                      y2="100%"
-                    >
+                    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%">
                       <stop offset="0%" stop-color="#1a5a96" />
                       <stop offset="100%" stop-color="#52c29a" />
                     </linearGradient>
@@ -146,7 +154,7 @@
                     stroke-linecap="round"
                     stroke-linejoin="round"
                     d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"
-                  />
+                  ></path>
                 </svg>
                 <span>Sign In</span>
               </button>
@@ -212,17 +220,19 @@
     </div>
 
     <!-- Cart Section -->
-    <section class="container mx-auto px-4 pb-8">
+    <section class="container mx-auto md:px-4 md:py-8 py-4 px-0">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
         <!-- Cart Items -->
         <div class="lg:col-span-8 space-y-8">
           <!-- Cart Item -->
           <div class="p-4">
             <div class="flex items-center justify-between">
-              <h2 class="text-xl font-semibold text-secondary mb-2">
+              <h2 class="text-xl md:text-3xl font-semibold text-secondary mb-2">
                 specialdomain.net
               </h2>
-              <p class="text-secondary mb-2">SG$39</p>
+              <p class="text-secondary mb-2 font-semibold text-lg md:text-xl">
+                SG$39
+              </p>
             </div>
             <p class="text-secondary mb-2">Domain name registration</p>
             <p class="text-secondary mb-2">
@@ -256,11 +266,11 @@
                       />
                       <!-- Line -->
                       <div
-                        class="block bg-gray-500 w-14 h-8 rounded-full toggle-label transition"
+                        class="block bg-gray-500 w-10 h-6 md:w-14 md:h-8 rounded-full toggle-label transition"
                       >
                         <!-- Dot -->
                         <div
-                          class="dot absolute left-1 top-1 w-6 h-6 bg-white rounded-full transition transform"
+                          class="dot absolute left-1 top-1 md:w-6 md:h-6 h-4 w-4 bg-white rounded-full transition transform"
                         ></div>
                       </div>
                     </div>
@@ -268,8 +278,12 @@
                 </div>
 
                 <div>
-                  <p class="text-secondary">Title text goes here</p>
-                  <p class="text-secondary">Secondary text line goes here</p>
+                  <p class="text-secondary md:text-lg text-sm">
+                    Title text goes here
+                  </p>
+                  <p class="text-secondary text-xs md:text-md">
+                    Secondary text line goes here
+                  </p>
                 </div>
               </div>
               <p class="text-secondary">SG$19</p>
@@ -293,10 +307,12 @@
           </div>
           <div class="p-4">
             <div class="flex items-center justify-between">
-              <h2 class="text-xl font-semibold text-secondary mb-2">
+              <h2 class="text-xl md:text-3xl font-semibold text-secondary mb-2">
                 specialdomain.net
               </h2>
-              <p class="text-secondary mb-2">SG$39</p>
+              <p class="text-secondary mb-2 font-semibold text-lg md:text-xl">
+                SG$39
+              </p>
             </div>
             <p class="text-secondary mb-2">Domain name registration</p>
             <p class="text-secondary mb-2">
@@ -330,11 +346,11 @@
                       />
                       <!-- Line -->
                       <div
-                        class="block bg-gray-500 w-14 h-8 rounded-full toggle-label transition"
+                        class="block bg-gray-500 w-10 h-6 md:w-14 md:h-8 rounded-full toggle-label transition"
                       >
                         <!-- Dot -->
                         <div
-                          class="dot absolute left-1 top-1 w-6 h-6 bg-white rounded-full transition transform"
+                          class="dot absolute left-1 top-1 md:w-6 md:h-6 h-4 w-4 bg-white rounded-full transition transform"
                         ></div>
                       </div>
                     </div>
@@ -342,8 +358,12 @@
                 </div>
 
                 <div>
-                  <p class="text-secondary">Title text goes here</p>
-                  <p class="text-secondary">Secondary text line goes here</p>
+                  <p class="text-secondary md:text-lg text-sm">
+                    Title text goes here
+                  </p>
+                  <p class="text-secondary text-xs md:text-md">
+                    Secondary text line goes here
+                  </p>
                 </div>
               </div>
               <p class="text-secondary">SG$19</p>
@@ -367,10 +387,12 @@
           </div>
           <div class="p-4">
             <div class="flex items-center justify-between">
-              <h2 class="text-xl font-semibold text-secondary mb-2">
+              <h2 class="text-xl md:text-3xl font-semibold text-secondary mb-2">
                 specialdomain.net
               </h2>
-              <p class="text-secondary mb-2">SG$39</p>
+              <p class="text-secondary mb-2 font-semibold text-lg md:text-xl">
+                SG$39
+              </p>
             </div>
             <p class="text-secondary mb-2">Domain name registration</p>
             <p class="text-secondary mb-2">
@@ -404,11 +426,11 @@
                       />
                       <!-- Line -->
                       <div
-                        class="block bg-gray-500 w-14 h-8 rounded-full toggle-label transition"
+                        class="block bg-gray-500 w-10 h-6 md:w-14 md:h-8 rounded-full toggle-label transition"
                       >
                         <!-- Dot -->
                         <div
-                          class="dot absolute left-1 top-1 w-6 h-6 bg-white rounded-full transition transform"
+                          class="dot absolute left-1 top-1 md:w-6 md:h-6 h-4 w-4 bg-white rounded-full transition transform"
                         ></div>
                       </div>
                     </div>
@@ -416,8 +438,12 @@
                 </div>
 
                 <div>
-                  <p class="text-secondary">Title text goes here</p>
-                  <p class="text-secondary">Secondary text line goes here</p>
+                  <p class="text-secondary md:text-lg text-sm">
+                    Title text goes here
+                  </p>
+                  <p class="text-secondary text-xs md:text-md">
+                    Secondary text line goes here
+                  </p>
                 </div>
               </div>
               <p class="text-secondary">SG$19</p>
@@ -478,12 +504,12 @@
               class="flex w-full justify-start flex-col items-start gap-5 my-2"
             >
               <button
-                class="block w-full text-center py-3 text-lg font-semibold text-secondary text-white bg-primary rounded-md border border-primary rounded-br-lg shadow hover:bg-white hover:text-primary focus:outline-none focus:ring focus:ring-offset-2 focus:ring-primary"
+                class="block w-full text-center py-3 md:text-lg text-sm font-semibold text-secondary text-white bg-primary rounded-md border border-primary rounded-br-lg shadow hover:bg-white hover:text-primary focus:outline-none focus:ring focus:ring-offset-2 focus:ring-primary"
               >
                 Pay
               </button>
               <button
-                class="block text-center w-full py-3 text-lg font-semibold text-secondary text-primary border border-primary rounded-md rounded-br-lg shadow hover:bg-primary hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                class="block text-center w-full py-3 md:text-lg text-sm font-semibold text-secondary text-primary border border-primary rounded-md rounded-br-lg shadow hover:bg-primary hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
               >
                 Continue Shopping
               </button>
