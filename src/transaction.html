@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transaction History</title>
+    <link rel="stylesheet" href="./tailwind.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+  </head>
+  <body class="bg-gray-100 font-sans leading-normal tracking-normal">
+    <div class="flex justify-between items-center bg-white p-4 shadow-md">
+      <div class="flex items-center space-x-4">
+        <img
+          src="./assets/avatar.svg"
+          alt="Admin"
+          class="w-12 h-12 rounded-full"
+        />
+        <span class="text-xl font-semibold">Admin</span>
+      </div>
+      <div class="relative flex-1 mx-4">
+        <input
+          type="text"
+          placeholder="Search"
+          class="w-full pl-10 py-2 px-4 bg-gray-100 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+        <i
+          class="fa fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"
+        ></i>
+      </div>
+      <div class="relative">
+        <i
+          class="h-2 w-2 absolute top-0 right-0 rounded-full z-50 ring-2 ring-white bg-red-500"
+        >
+        </i>
+        <i class="fa fa-bell text-gray-700 relative fa-lg"> </i>
+      </div>
+    </div>
+    <div class="flex flex-col md:flex-row">
+      <!-- Sidebar -->
+      <div class="bg-white w-full md:w-1/5 h-screen shadow-lg">
+        <div class="flex items-center justify-center h-20 border-b">
+          <img
+            src="path_to_profile_image.jpg"
+            alt="Admin"
+            class="w-12 h-12 rounded-full"
+          />
+          <div class="ml-3 text-xl font-semibold">Admin</div>
+        </div>
+        <nav class="mt-10">
+          <a
+            href="#"
+            class="flex items-center p-2 text-gray-600 hover:bg-gray-200 hover:text-gray-700"
+          >
+            <span class="inline-flex justify-center w-6"
+              ><i class="fa fa-tachometer-alt"></i
+            ></span>
+            <span class="ml-2">Dashboard</span>
+          </a>
+          <a
+            href="#"
+            class="flex items-center p-2 text-gray-600 hover:bg-gray-200 hover:text-gray-700"
+          >
+            <span class="inline-flex justify-center w-6"
+              ><i class="fa fa-cloud"></i
+            ></span>
+            <span class="ml-2">Domains</span>
+          </a>
+          <a
+            href="#"
+            class="flex items-center p-2 text-gray-600 hover:bg-gray-200 hover:text-gray-700"
+          >
+            <span class="inline-flex justify-center w-6"
+              ><i class="fa fa-server"></i
+            ></span>
+            <span class="ml-2">Hosting</span>
+          </a>
+          <a
+            href="#"
+            class="flex items-center p-2 text-gray-600 hover:bg-gray-200 hover:text-gray-700"
+          >
+            <span class="inline-flex justify-center w-6"
+              ><i class="fa fa-shield-alt"></i
+            ></span>
+            <span class="ml-2">Manage Security</span>
+          </a>
+          <a
+            href="#"
+            class="flex items-center p-2 text-gray-600 hover:bg-gray-200 hover:text-gray-700"
+          >
+            <span class="inline-flex justify-center w-6"
+              ><i class="fa fa-envelope"></i
+            ></span>
+            <span class="ml-2">Email Management</span>
+          </a>
+          <a
+            href="#"
+            class="flex items-center p-2 text-gray-600 bg-gray-200 hover:bg-gray-300 hover:text-gray-700"
+          >
+            <span class="inline-flex justify-center w-6"
+              ><i class="fa fa-dollar-sign"></i
+            ></span>
+            <span class="ml-2">Payments</span>
+          </a>
+          <div class="ml-6 mt-2 text-sm text-gray-600">Transaction History</div>
+          <a
+            href="#"
+            class="flex items-center p-2 text-gray-600 hover:bg-gray-200 hover:text-gray-700"
+          >
+            <span class="ml-6">Payment Methods</span>
+          </a>
+        </nav>
+        <a
+          href="#"
+          class="flex items-center p-2 text-gray-600 hover:bg-gray-200 hover:text-gray-700 absolute bottom-0 w-full"
+        >
+          <span class="inline-flex justify-center w-6"
+            ><i class="fa fa-sign-out-alt"></i
+          ></span>
+          <span class="ml-2">Log Out</span>
+        </a>
+      </div>
+
+      <!-- Main Content -->
+      <div class="w-full md:w-4/5 h-screen p-6 bg-gray-50">
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+          <h2 class="text-2xl font-bold mb-6">Transaction History</h2>
+          <div class="flex justify-between items-center mb-4">
+            <div class="flex items-center space-x-2">
+              <button class="bg-gray-200 text-gray-700 px-4 py-2 rounded">
+                Filters
+              </button>
+            </div>
+            <div>2 row(s) selected</div>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="min-w-full bg-white">
+              <thead class="bg-gray-200 text-gray-700">
+                <tr>
+                  <th class="w-12 py-3 px-4 text-left">
+                    <input type="checkbox" />
+                  </th>
+                  <th class="py-3 px-4 text-left">Item</th>
+                  <th class="py-3 px-4 text-left">Payment Type</th>
+                  <th class="py-3 px-4 text-left">Transaction ID</th>
+                  <th class="py-3 px-4 text-left">Date & Time</th>
+                  <th class="py-3 px-4 text-left">Status</th>
+                  <th class="py-3 px-4 text-left">Manage</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="border-b">
+                  <td class="py-3 px-4"><input type="checkbox" /></td>
+                  <td class="py-3 px-4">My Test Instance</td>
+                  <td class="py-3 px-4">Create</td>
+                  <td class="py-3 px-4">pi_3o6r8PLSehM0rzG01KxddBB</td>
+                  <td class="py-3 px-4">Oct. 30, 2023, 8:45 a.m.</td>
+                  <td class="py-3 px-4 flex items-center">
+                    <span class="text-green-500 mr-2">•</span>
+                    Success
+                  </td>
+                  <td class="py-3 px-4 flex space-x-2">
+                    <button><i class="fa fa-eye text-gray-600"></i></button>
+                    <button><i class="fa fa-pen text-gray-600"></i></button>
+                    <button><i class="fa fa-trash text-gray-600"></i></button>
+                  </td>
+                </tr>
+                <tr class="border-b">
+                  <td class="py-3 px-4"><input type="checkbox" /></td>
+                  <td class="py-3 px-4">Name of Instance</td>
+                  <td class="py-3 px-4">Create</td>
+                  <td class="py-3 px-4">pi_3o6rltLSehM0rzG019IzTYjB</td>
+                  <td class="py-3 px-4">Oct. 30, 2023, 8:45 a.m.</td>
+                  <td class="py-3 px-4 flex items-center">
+                    <span class="text-yellow-500 mr-2">•</span>
+                    Pending
+                  </td>
+                  <td class="py-3 px-4 flex space-x-2">
+                    <button><i class="fa fa-eye text-gray-600"></i></button>
+                    <button><i class="fa fa-pen text-gray-600"></i></button>
+                    <button><i class="fa fa-trash text-gray-600"></i></button>
+                  </td>
+                </tr>
+                <tr class="border-b">
+                  <td class="py-3 px-4"><input type="checkbox" /></td>
+                  <td class="py-3 px-4">Name of Instance</td>
+                  <td class="py-3 px-4">Create</td>
+                  <td class="py-3 px-4">pi_3o6u5RLSehM0rzG01GLUrkJi</td>
+                  <td class="py-3 px-4">Oct. 30, 2023, 8:45 a.m.</td>
+                  <td class="py-3 px-4 flex items-center">
+                    <span class="text-green-500 mr-2">•</span>
+                    Success
+                  </td>
+                  <td class="py-3 px-4 flex space-x-2">
+                    <button><i class="fa fa-eye text-gray-600"></i></button>
+                    <button><i class="fa fa-pen text-gray-600"></i></button>
+                    <button><i class="fa fa-trash text-gray-600"></i></button>
+                  </td>
+                </tr>
+                <tr class="border-b">
+                  <td class="py-3 px-4"><input type="checkbox" /></td>
+                  <td class="py-3 px-4">Name of Instance</td>
+                  <td class="py-3 px-4">Create</td>
+                  <td class="py-3 px-4">pi_3o9qr9rLSehM0rzG01Ldmxe6w</td>
+                  <td class="py-3 px-4">Oct. 30, 2023, 8:45 a.m.</td>
+                  <td class="py-3 px-4 flex items-center">
+                    <span class="text-green-500 mr-2">•</span>
+                    Success
+                  </td>
+                  <td class="py-3 px-4 flex space-x-2">
+                    <button><i class="fa fa-eye text-gray-600"></i></button>
+                    <button><i class="fa fa-pen text-gray-600"></i></button>
+                    <button><i class="fa fa-trash text-gray-600"></i></button>
+                  </td>
+                </tr>
+                <tr class="border-b">
+                  <td class="py-3 px-4"><input type="checkbox" /></td>
+                  <td class="py-3 px-4">Name of Instance</td>
+                  <td class="py-3 px-4">Create</td>
+                  <td class="py-3 px-4">pi_3o9qr9rLSehM0rzG01Ldmxe6w</td>
+                  <td class="py-3 px-4">Oct. 30, 2023, 8:45 a.m.</td>
+                  <td class="py-3 px-4 flex items-center">
+                    <span class="text-green-500 mr-2">•</span>
+                    Success
+                  </td>
+                  <td class="py-3 px-4 flex space-x-2">
+                    <button><i class="fa fa-eye text-gray-600"></i></button>
+                    <button><i class="fa fa-pen text-gray-600"></i></button>
+                    <button><i class="fa fa-trash text-gray-600"></i></button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="flex justify-between items-center mt-4">
+            <button class="bg-gray-200 text-gray-700 px-4 py-2 rounded">
+              Previous
+            </button>
+            <div>Page 1 of 1</div>
+            <button class="bg-gray-200 text-gray-700 px-4 py-2 rounded">
+              Next
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Settings</title>
+    <link rel="stylesheet" href="./tailwind.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+  </head>
+  <body class="bg-gray-100 font-sans leading-normal tracking-normal">
+    <div class="flex justify-between items-center bg-white p-4 shadow-md">
+      <div class="flex items-center space-x-4">
+        <img
+          src="./assets/avatar.svg"
+          alt="Admin"
+          class="w-12 h-12 rounded-full"
+        />
+        <span class="text-xl font-semibold">Admin</span>
+      </div>
+      <div class="relative flex-1 mx-4">
+        <input
+          type="text"
+          placeholder="Search"
+          class="w-full pl-10 py-2 px-4 bg-gray-100 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+        <i
+          class="fa fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"
+        ></i>
+      </div>
+      <div class="relative">
+        <i
+          class="h-2 w-2 absolute top-0 right-0 rounded-full z-50 ring-2 ring-white bg-red-500"
+        >
+        </i>
+        <i class="fa fa-bell text-gray-700 relative fa-lg"> </i>
+      </div>
+    </div>
+    <div class="flex flex-col md:flex-row">
+      <!-- Sidebar -->
+      <div class="bg-white w-full md:w-1/5 h-screen shadow-lg">
+        <div class="flex items-center justify-center h-20 border-b">
+          <div class="text-xl font-semibold">Admin</div>
+        </div>
+        <nav class="mt-10">
+          <a
+            href="#"
+            class="flex items-center p-2 text-gray-600 hover:bg-gray-200 hover:text-gray-700"
+          >
+            <span class="inline-flex justify-center w-6"
+              ><i class="fa fa-tachometer-alt"></i
+            ></span>
+            <span class="ml-2">Dashboard</span>
+          </a>
+          <a
+            href="#"
+            class="flex items-center p-2 text-gray-600 hover:bg-gray-200 hover:text-gray-700"
+          >
+            <span class="inline-flex justify-center w-6"
+              ><i class="fa fa-cloud"></i
+            ></span>
+            <span class="ml-2">Domains</span>
+          </a>
+          <a
+            href="#"
+            class="flex items-center p-2 text-gray-600 hover:bg-gray-200 hover:text-gray-700"
+          >
+            <span class="inline-flex justify-center w-6"
+              ><i class="fa fa-server"></i
+            ></span>
+            <span class="ml-2">Hosting</span>
+          </a>
+          <a
+            href="#"
+            class="flex items-center p-2 text-gray-600 hover:bg-gray-200 hover:text-gray-700"
+          >
+            <span class="inline-flex justify-center w-6"
+              ><i class="fa fa-shield-alt"></i
+            ></span>
+            <span class="ml-2">Manage Security</span>
+          </a>
+          <a
+            href="#"
+            class="flex items-center p-2 text-gray-600 hover:bg-gray-200 hover:text-gray-700"
+          >
+            <span class="inline-flex justify-center w-6"
+              ><i class="fa fa-envelope"></i
+            ></span>
+            <span class="ml-2">Email Management</span>
+          </a>
+          <a
+            href="#"
+            class="flex items-center p-2 text-gray-600 hover:bg-gray-200 hover:text-gray-700"
+          >
+            <span class="inline-flex justify-center w-6"
+              ><i class="fa fa-dollar-sign"></i
+            ></span>
+            <span class="ml-2">Payments</span>
+          </a>
+          <a
+            href="#"
+            class="flex items-center p-2 text-gray-600 bg-gray-200 hover:bg-gray-300 hover:text-gray-700"
+          >
+            <span class="inline-flex justify-center w-6"
+              ><i class="fa fa-cog"></i
+            ></span>
+            <span class="ml-2">Settings</span>
+          </a>
+        </nav>
+        <a
+          href="#"
+          class="flex items-center p-2 text-gray-600 hover:bg-gray-200 hover:text-gray-700 absolute bottom-0 w-full"
+        >
+          <span class="inline-flex justify-center w-6"
+            ><i class="fa fa-sign-out-alt"></i
+          ></span>
+          <span class="ml-2">Log Out</span>
+        </a>
+      </div>
+
+      <!-- Main Content -->
+      <div class="w-full md:w-4/5 h-screen p-6 bg-gray-50">
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+          <h2 class="text-2xl font-bold mb-6">Settings</h2>
+          <div class="flex flex-col md:flex-row">
+            <div class="w-full md:w-1/2 pr-4">
+              <div class="mb-4">
+                <label class="block text-gray-700">Name</label>
+                <input
+                  type="text"
+                  class="w-full p-2 border border-gray-300 rounded mt-1"
+                  placeholder="Enter name"
+                />
+              </div>
+              <div class="mb-4">
+                <label class="block text-gray-700">Profile Image</label>
+                <div class="flex items-center mt-1">
+                  <div
+                    class="w-16 h-16 bg-gray-200 rounded flex items-center justify-center"
+                  >
+                    <span>Image Name 1</span>
+                  </div>
+                  <div class="ml-4">
+                    <button class="bg-gray-200 p-2 rounded">
+                      Replace Image
+                    </button>
+                  </div>
+                  <div class="ml-4">
+                    <button class="text-red-500">
+                      <i class="fa fa-trash-alt"></i>
+                    </button>
+                  </div>
+                </div>
+                <p class="text-gray-500 mt-2">
+                  Dimensions: 16 x 16 px <br />
+                  Format: jpg, pdf, png
+                </p>
+              </div>
+              <div class="mb-4">
+                <label class="block text-gray-700">Default Currency</label>
+                <select class="w-full p-2 border border-gray-300 rounded mt-1">
+                  <option>Singapore Dollar (SGD)</option>
+                </select>
+              </div>
+            </div>
+            <div class="w-full md:w-1/2 pl-4">
+              <div class="mb-4">
+                <label class="block text-gray-700">Address</label>
+                <input
+                  type="text"
+                  class="w-full p-2 border border-gray-300 rounded mt-1"
+                  placeholder="Enter address"
+                />
+              </div>
+              <div class="mb-4">
+                <label class="block text-gray-700">Phone Number</label>
+                <input
+                  type="text"
+                  class="w-full p-2 border border-gray-300 rounded mt-1"
+                  placeholder="Enter contact info"
+                />
+              </div>
+              <div class="mb-4">
+                <label class="block text-gray-700">Email address</label>
+                <input
+                  type="email"
+                  class="w-full p-2 border border-gray-300 rounded mt-1"
+                  placeholder="Enter contact info"
+                />
+              </div>
+              <button class="bg-gray-800 text-white p-2 rounded mt-4">
+                Save
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
