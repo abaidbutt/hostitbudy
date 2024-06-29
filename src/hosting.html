@@ -24,7 +24,7 @@
         <input
           type="text"
           placeholder="Search"
-          class="w-full pl-10 py-2 px-4 bg-gray-100 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          class="w-full pl-10 py-2 px-4 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
         <i
           class="fa fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"
@@ -38,223 +38,374 @@
         <i class="fa fa-bell text-gray-700 relative fa-lg"> </i>
       </div>
     </div>
-    <div class="flex flex-col md:flex-row">
+    <div class="flex flex-col md:flex-row p-4 bg-[#fbfdfc]">
       <!-- Sidebar -->
-      <div class="bg-white w-full md:w-1/5 h-screen shadow-lg">
-        <div class="flex items-center justify-center h-20 border-b">
-          <img
-            src="path_to_profile_image.jpg"
-            alt="Admin"
-            class="w-12 h-12 rounded-full"
-          />
-          <div class="ml-3 text-xl font-semibold">Admin</div>
+      <div
+        id="sidebar"
+        class="sidebar-expanded flex shadow-3xl rounded p-4 relative transition-all duration-300 flex-col bg-white shadow-md rounded-md"
+      >
+        <div class="flex items-center justify-end h-20 border-b">
+          <button onclick="toggleSidebar()" class="focus:outline-none">
+            <div class="flex items-center">
+              <!-- <i class="fas fa-bars"></i> -->
+              <img src="./assets/sidebar.svg" />
+              <img src="./assets/arrow_left.svg" />
+            </div>
+          </button>
         </div>
         <nav class="mt-10">
           <a
-            href="#"
+            href="/src/dashboard.html"
+            id="dashboard-link"
             class="flex items-center p-2 text-gray-600 hover:bg-gray-200 hover:text-gray-700"
           >
-            <span class="inline-flex justify-center w-6"
-              ><i class="fa fa-tachometer-alt"></i
-            ></span>
-            <span class="ml-2">Dashboard</span>
+            <span class="inline-flex justify-center w-6">
+              <img src="./assets/dashboard.svg" />
+            </span>
+            <span class="ml-2 menu-item-text">Dashboard</span>
           </a>
           <a
-            href="#"
+            href="/src/domains.html"
+            id="domains-link"
             class="flex items-center p-2 text-gray-600 hover:bg-gray-200 hover:text-gray-700"
           >
-            <span class="inline-flex justify-center w-6"
-              ><i class="fa fa-cloud"></i
-            ></span>
-            <span class="ml-2">Domains</span>
+            <span class="inline-flex justify-center w-6">
+              <img src="./assets/domain.svg" />
+            </span>
+            <span class="ml-2 menu-item-text">Domains</span>
           </a>
           <a
-            href="#"
-            class="flex items-center p-2 text-gray-600 bg-gray-200 hover:bg-gray-300 hover:text-gray-700"
-          >
-            <span class="inline-flex justify-center w-6"
-              ><i class="fa fa-server"></i
-            ></span>
-            <span class="ml-2">Hosting</span>
-          </a>
-          <a
-            href="#"
+            href="/src/hosting.html"
+            id="hosting-link"
             class="flex items-center p-2 text-gray-600 hover:bg-gray-200 hover:text-gray-700"
           >
-            <span class="inline-flex justify-center w-6"
-              ><i class="fa fa-shield-alt"></i
-            ></span>
-            <span class="ml-2">Manage Security</span>
+            <span class="inline-flex justify-center w-6">
+              <img src="./assets/hosting.svg" />
+            </span>
+            <span class="ml-2 menu-item-text">Hosting</span>
           </a>
+          <div class="flex flex-col">
+            <button
+              class="flex items-center p-2 text-gray-600 hover:bg-gray-200 hover:text-gray-700"
+              onclick="toggleDropdown('manageServers')"
+            >
+              <span class="inline-flex justify-center w-6">
+                <img src="./assets/manage_server.svg" />
+              </span>
+              <span class="ml-2 menu-item-text">Manage Servers</span>
+              <span class="ml-auto">
+                <i id="manageServers-icon" class="fas"></i>
+              </span>
+            </button>
+            <div id="manageServers" class="ml-8 hidden">
+              <a
+                href="/src/dedicated-servers"
+                class="block p-2 text-gray-600 hover:bg-gray-200 hover:text-gray-700"
+                >Dedicated Servers</a
+              >
+              <a
+                href="/src/virtual-servers"
+                class="block p-2 text-gray-600 hover:bg-gray-200 hover:text-gray-700"
+                >Virtual Servers</a
+              >
+            </div>
+          </div>
+          <div class="flex flex-col">
+            <button
+              class="flex items-center p-2 text-gray-600 hover:bg-gray-200 hover:text-gray-700"
+              onclick="toggleDropdown('manageSecurity')"
+            >
+              <span class="inline-flex justify-center w-6">
+                <img src="./assets/manage_security.svg" />
+              </span>
+              <span class="ml-2 menu-item-text">Manage Security</span>
+              <span class="ml-auto">
+                <i id="manageSecurity-icon" class="fas"></i>
+              </span>
+            </button>
+            <div id="manageSecurity" class="ml-8 hidden">
+              <a
+                href="/src/ssl-certificate"
+                class="block p-2 text-gray-600 hover:bg-gray-200 hover:text-gray-700"
+                >SSL Certificate</a
+              >
+              <a
+                href="/src/website-security"
+                class="block p-2 text-gray-600 hover:bg-gray-200 hover:text-gray-700"
+                >Website Security</a
+              >
+              <a
+                href="/src/email-security"
+                class="block p-2 text-gray-600 hover:bg-gray-200 hover:text-gray-700"
+                >Email Security</a
+              >
+            </div>
+          </div>
           <a
-            href="#"
+            href="/src/email-management"
+            id="email-management-link"
             class="flex items-center p-2 text-gray-600 hover:bg-gray-200 hover:text-gray-700"
           >
-            <span class="inline-flex justify-center w-6"
-              ><i class="fa fa-envelope"></i
-            ></span>
-            <span class="ml-2">Email Management</span>
+            <span class="inline-flex justify-center w-6">
+              <img src="./assets/email.svg" />
+            </span>
+            <span class="ml-2 menu-item-text">Email Management</span>
           </a>
+          <div class="flex flex-col">
+            <button
+              class="flex items-center p-2 text-gray-600 hover:bg-gray-200 hover:text-gray-700"
+              onclick="toggleDropdown('payments')"
+            >
+              <span class="inline-flex justify-center w-6">
+                <img src="./assets/payment.svg" />
+              </span>
+              <span class="ml-2 menu-item-text">Payments</span>
+              <span class="ml-auto">
+                <i id="payments-icon" class="fas"></i>
+              </span>
+            </button>
+            <div id="payments" class="ml-8 hidden">
+              <a
+                href="/src/transaction.html"
+                class="block p-2 text-gray-600 hover:bg-gray-200 hover:text-gray-700"
+                >Transaction History</a
+              >
+              <a
+                href="/src/dash_payment.html"
+                class="block p-2 text-gray-600 hover:bg-gray-200 hover:text-gray-700"
+                >Payment Methods</a
+              >
+            </div>
+          </div>
           <a
-            href="#"
+            href="/src/setting.html"
+            id="settings-link"
             class="flex items-center p-2 text-gray-600 hover:bg-gray-200 hover:text-gray-700"
           >
-            <span class="inline-flex justify-center w-6"
-              ><i class="fa fa-dollar-sign"></i
-            ></span>
-            <span class="ml-2">Payments</span>
+            <span class="inline-flex justify-center w-6">
+              <img src="./assets/settings.svg" />
+            </span>
+            <span class="ml-2 menu-item-text">Settings</span>
           </a>
-          <div class="ml-6 mt-2 text-sm text-gray-600">Transaction History</div>
-          <a
-            href="#"
-            class="flex items-center p-2 text-gray-600 hover:bg-gray-200 hover:text-gray-700"
-          >
-            <span class="ml-6">Payment Methods</span>
-          </a>
-          <div class="ml-6 mt-2 text-sm text-gray-600">Cloud Instances</div>
         </nav>
         <a
           href="#"
-          class="flex items-center p-2 text-gray-600 hover:bg-gray-200 hover:text-gray-700 absolute bottom-0 w-full"
+          class="flex items-center p-2 text-gray-600 hover:bg-gray-200 hover:text-gray-700 absolute bottom-0 block"
         >
-          <span class="inline-flex justify-center w-6"
-            ><i class="fa fa-sign-out-alt"></i
-          ></span>
-          <span class="ml-2">Log Out</span>
+          <span class="inline-flex justify-center w-6">
+            <img src="./assets/logout.svg" />
+          </span>
+          <span class="ml-2 menu-item-text">Log Out</span>
         </a>
       </div>
 
       <!-- Main Content -->
-      <div class="w-full md:w-4/5 h-screen p-6 bg-gray-50">
-        <div class="bg-white p-6 rounded-lg shadow-lg">
+      <div class="w-full h-screen p-6 bg-gray-50">
+        <div class="p-6">
+          <div class="flex items-center gap-4">
+            <img src="./assets/hosting.svg" />
+            <h2 class="text-xl text-dash">Hosting</h2>
+          </div>
           <h2 class="text-2xl font-bold mb-6">Cloud Instances</h2>
-          <div class="flex justify-between items-center mb-4">
-            <div class="flex items-center space-x-2">
-              <button class="bg-gray-200 text-gray-700 px-4 py-2 rounded">
+          <div class="flex justify-between items-center py-4">
+            <div class="flex items-center space-x-4">
+              <button
+                class="flex items-center px-4 py-2 bg-white border border-gray-300 rounded text-gray-600 hover:bg-gray-100"
+              >
+                <img src="./assets/filter.svg" class="mr-2" />
                 Filters
               </button>
-              <button class="bg-blue-500 text-white px-4 py-2 rounded">
+              <button
+                class="flex items-center px-4 py-2 bg-black text-white rounded hover:bg-gray-900"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5 mr-2"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 5a1 1 0 011 1v3h3a1 1 0 010 2h-3v3a1 1 0 01-2 0v-3H6a1 1 0 010-2h3V6a1 1 0 011-1z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
                 Add New
               </button>
+              <span class="text-gray-600">2 row(s) selected</span>
             </div>
-            <div>2 row(s) selected</div>
+            <div class="relative">
+              <input
+                type="text"
+                class="border border-gray-300 rounded-md py-2 pl-10 pr-4 w-64 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                placeholder="Search"
+              />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5 absolute left-3 top-2.5 text-gray-500"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M12.9 14.32a8 8 0 111.42-1.42l4.3 4.3a1 1 0 01-1.42 1.42l-4.3-4.3zM8 14a6 6 0 100-12 6 6 0 000 12z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </div>
           </div>
           <div class="overflow-x-auto">
-            <table class="min-w-full bg-white">
-              <thead class="bg-gray-200 text-gray-700">
+            <table class="min-w-full bg-white shadow-md rounded-md">
+              <thead class="bg-[#F7FAF9] text-gray-700">
                 <tr>
                   <th class="w-12 py-3 px-4 text-left">
-                    <input type="checkbox" />
+                    <input type="checkbox"  />
                   </th>
-                  <th class="py-3 px-4 text-left">Instance Name</th>
-                  <th class="py-3 px-4 text-left">Instance Type</th>
-                  <th class="py-3 px-4 text-left">Renews</th>
-                  <th class="py-3 px-4 text-left">Created On</th>
-                  <th class="py-3 px-4 text-left">Last Updated</th>
-                  <th class="py-3 px-4 text-left">Status</th>
-                  <th class="py-3 px-4 text-left">Manage</th>
+                  <th class="py-3 px-4 text-left">
+                    Instance Name
+                    <i class="fas fa-arrow-down text-dash pl-4 fa-sm"></i>
+                  </th>
+                  <th class="py-3 px-4 text-left">
+                    Instance Type
+                    <i class="fas fa-arrow-down text-dash pl-4 fa-sm"></i>
+                  </th>
+                  <th class="py-3 px-4 text-left">
+                    Renews
+                    <i class="fas fa-arrow-down text-dash pl-4 fa-sm"></i>
+                  </th>
+                  <th class="py-3 px-4 text-left">
+                    Created On
+                    <i class="fas fa-arrow-down text-dash pl-4 fa-sm"></i>
+                  </th>
+                  <th class="py-3 px-4 text-left">
+                    Last Updated
+                    <i class="fas fa-arrow-down text-dash pl-4 fa-sm"></i>
+                  </th>
+                  <th class="py-3 px-4 text-left">
+                    Status
+                    <i class="fas fa-arrow-down text-dash pl-4 fa-sm"></i>
+                  </th>
+                  <th class="py-3 px-4 text-left">
+                    Manage
+                    <i class="fas fa-arrow-down text-dash pl-4 fa-sm"></i>
+                  </th>
                 </tr>
               </thead>
               <tbody>
                 <tr class="border-b">
-                  <td class="py-3 px-4"><input type="checkbox" /></td>
+                  <td class="py-3 px-4"><input type="checkbox"  /></td>
                   <td class="py-3 px-4">My Test Instance</td>
                   <td class="py-3 px-4">AWS DYNAMIC BASIC</td>
                   <td class="py-3 px-4">Oct. 30, 2024</td>
                   <td class="py-3 px-4">Oct. 30, 2023, 8:45 a.m.</td>
                   <td class="py-3 px-4">Oct. 30, 2023, 8:45 a.m.</td>
-                  <td class="py-3 px-4 flex items-center">
-                    <span class="text-yellow-500 mr-2">•</span>
-                    Provisioning in Progress
+
+                  <td class="py-3 px-4">
+                    <span class="text-yellow-500 mr-2">•</span> Provisioning
                   </td>
                   <td class="py-3 px-4 flex space-x-2">
                     <button><i class="fa fa-eye text-gray-600"></i></button>
                     <button><i class="fa fa-pen text-gray-600"></i></button>
-                    <button><i class="fa fa-trash text-gray-600"></i></button>
+                    <button>
+                      <i class="far fa-trash-alt text-gray-600"></i>
+                    </button>
                   </td>
                 </tr>
                 <tr class="border-b">
-                  <td class="py-3 px-4"><input type="checkbox" /></td>
+                  <td class="py-3 px-4"><input type="checkbox"  /></td>
                   <td class="py-3 px-4">Name of Instance</td>
                   <td class="py-3 px-4">AWS ECOMMERCE</td>
                   <td class="py-3 px-4">Oct. 30, 2024</td>
                   <td class="py-3 px-4">Oct. 30, 2023, 8:45 a.m.</td>
                   <td class="py-3 px-4">Oct. 30, 2023, 8:45 a.m.</td>
-                  <td class="py-3 px-4 flex items-center">
+                  <td class="py-3 px-4">
                     <span class="text-yellow-500 mr-2">•</span>
                     Provisioning in Progress
                   </td>
                   <td class="py-3 px-4 flex space-x-2">
                     <button><i class="fa fa-eye text-gray-600"></i></button>
                     <button><i class="fa fa-pen text-gray-600"></i></button>
-                    <button><i class="fa fa-trash text-gray-600"></i></button>
+                    <button>
+                      <i class="far fa-trash-alt text-gray-600"></i>
+                    </button>
                   </td>
                 </tr>
                 <tr class="border-b">
-                  <td class="py-3 px-4"><input type="checkbox" /></td>
+                  <td class="py-3 px-4"><input type="checkbox"  /></td>
                   <td class="py-3 px-4">Name of Instance</td>
                   <td class="py-3 px-4">AWS DYNAMIC BASIC</td>
                   <td class="py-3 px-4">Oct. 30, 2024</td>
                   <td class="py-3 px-4">Oct. 30, 2023, 8:45 a.m.</td>
                   <td class="py-3 px-4">Oct. 30, 2023, 8:45 a.m.</td>
-                  <td class="py-3 px-4 flex items-center">
-                    <span class="text-yellow-500 mr-2">•</span>
-                    Provisioning in Progress
+                  <td class="py-3 px-4">
+                    <span class="text-yellow-500 mr-2">•</span> Provisioning in
+                    progress
                   </td>
                   <td class="py-3 px-4 flex space-x-2">
                     <button><i class="fa fa-eye text-gray-600"></i></button>
                     <button><i class="fa fa-pen text-gray-600"></i></button>
-                    <button><i class="fa fa-trash text-gray-600"></i></button>
+                    <button>
+                      <i class="far fa-trash-alt text-gray-600"></i>
+                    </button>
                   </td>
                 </tr>
                 <tr class="border-b">
-                  <td class="py-3 px-4"><input type="checkbox" /></td>
+                  <td class="py-3 px-4"><input type="checkbox"  /></td>
                   <td class="py-3 px-4">Name of Instance</td>
                   <td class="py-3 px-4">AWS ECOMMERCE</td>
                   <td class="py-3 px-4">Oct. 30, 2024</td>
                   <td class="py-3 px-4">Oct. 30, 2023, 8:45 a.m.</td>
                   <td class="py-3 px-4">Oct. 30, 2023, 8:45 a.m.</td>
-                  <td class="py-3 px-4 flex items-center">
-                    <span class="text-yellow-500 mr-2">•</span>
-                    Provisioning in Progress
+                  <td class="py-3 px-4">
+                    <span class="text-yellow-500 mr-2">•</span> Provisioning in
+                    progress
                   </td>
                   <td class="py-3 px-4 flex space-x-2">
                     <button><i class="fa fa-eye text-gray-600"></i></button>
                     <button><i class="fa fa-pen text-gray-600"></i></button>
-                    <button><i class="fa fa-trash text-gray-600"></i></button>
+                    <button>
+                      <i class="far fa-trash-alt text-gray-600"></i>
+                    </button>
                   </td>
                 </tr>
                 <tr class="border-b">
-                  <td class="py-3 px-4"><input type="checkbox" /></td>
+                  <td class="py-3 px-4"><input type="checkbox"  /></td>
                   <td class="py-3 px-4">Name of Instance</td>
                   <td class="py-3 px-4">AWS DYNAMIC BASIC</td>
                   <td class="py-3 px-4">Oct. 30, 2024</td>
                   <td class="py-3 px-4">Oct. 30, 2023, 8:45 a.m.</td>
                   <td class="py-3 px-4">Oct. 30, 2023, 8:45 a.m.</td>
-                  <td class="py-3 px-4 flex items-center">
-                    <span class="text-yellow-500 mr-2">•</span>
-                    Provisioning in Progress
+                  <td class="py-3 px-4">
+                    <span class="text-yellow-500 mr-2">•</span> Provisioning in
+                    progress
                   </td>
                   <td class="py-3 px-4 flex space-x-2">
                     <button><i class="fa fa-eye text-gray-600"></i></button>
                     <button><i class="fa fa-pen text-gray-600"></i></button>
-                    <button><i class="fa fa-trash text-gray-600"></i></button>
+                    <button>
+                      <i class="far fa-trash-alt text-gray-600"></i>
+                    </button>
                   </td>
                 </tr>
               </tbody>
             </table>
-          </div>
-          <div class="flex justify-between items-center mt-4">
-            <button class="bg-gray-200 text-gray-700 px-4 py-2 rounded">
-              Previous
-            </button>
-            <div>Page 1 of 1</div>
-            <button class="bg-gray-200 text-gray-700 px-4 py-2 rounded">
-              Next
-            </button>
+            <div class="flex justify-between items-center bg-[#F7FAF9] p-3">
+              <button
+                class="bg-white text-dash px-4 py-2 rounded border border-dash"
+              >
+                Previous
+              </button>
+              <div>Page 1 of 1</div>
+              <button
+                class="bg-white text-dash px-4 py-2 rounded border border-dash"
+              >
+                Next
+              </button>
+            </div>
           </div>
         </div>
       </div>
     </div>
+    <script src="main.js"></script>
   </body>
 </html>

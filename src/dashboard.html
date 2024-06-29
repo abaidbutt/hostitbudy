@@ -10,8 +10,8 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     />
   </head>
-  <body class="bg-gray-100 font-sans leading-normal tracking-normal">
-    <div class="flex justify-between items-center bg-white p-4 shadow-md">
+  <body class="font-sans leading-normal tracking-normal">
+    <div class="flex justify-between items-center bg-white shadow-md p-4">
       <div class="flex items-center space-x-4">
         <img
           src="./assets/avatar.svg"
@@ -24,7 +24,7 @@
         <input
           type="text"
           placeholder="Search"
-          class="w-full pl-10 py-2 px-4 bg-gray-100 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          class="w-full pl-10 py-2 px-4 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
         <i
           class="fa fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"
@@ -38,251 +38,420 @@
         <i class="fa fa-bell text-gray-700 relative fa-lg"> </i>
       </div>
     </div>
-    <div class="flex flex-col md:flex-row">
+    <div class="flex flex-col md:flex-row p-4 bg-[#fbfdfc]">
       <!-- Sidebar -->
-      <div class="bg-white w-full md:w-1/5 h-screen shadow-lg">
-        <div class="flex items-center justify-center h-20 border-b">
-          <div class="ml-3 text-xl font-semibold"></div>
+      <div
+        id="sidebar"
+        class="sidebar-expanded flex shadow-3xl rounded p-4 relative transition-all duration-300 flex-col bg-white shadow-md rounded-md"
+      >
+        <div class="flex items-center justify-end h-20 border-b">
+          <button onclick="toggleSidebar()" class="focus:outline-none">
+            <div class="flex items-center">
+              <!-- <i class="fas fa-bars"></i> -->
+              <img src="./assets/sidebar.svg" />
+              <img src="./assets/arrow_left.svg" />
+            </div>
+          </button>
         </div>
         <nav class="mt-10">
           <a
-            href="#"
-            class="flex items-center p-2 text-gray-600 bg-gray-200 hover:bg-gray-300 hover:text-gray-700"
-          >
-            <span class="inline-flex justify-center w-6"
-              ><i class="fa fa-tachometer-alt"></i
-            ></span>
-            <span class="ml-2">Dashboard</span>
-          </a>
-          <a
-            href="#"
+            href="/src/dashboard.html"
+            id="dashboard-link"
             class="flex items-center p-2 text-gray-600 hover:bg-gray-200 hover:text-gray-700"
           >
-            <span class="inline-flex justify-center w-6"
-              ><i class="fa fa-cloud"></i
-            ></span>
-            <span class="ml-2">Domains</span>
+            <span class="inline-flex justify-center w-6">
+              <img src="./assets/dashboard.svg" />
+            </span>
+            <span class="ml-2 menu-item-text text-dash">Dashboard</span>
           </a>
           <a
-            href="#"
+            href="/src/domains.html"
+            id="domains-link"
             class="flex items-center p-2 text-gray-600 hover:bg-gray-200 hover:text-gray-700"
           >
-            <span class="inline-flex justify-center w-6"
-              ><i class="fa fa-server"></i
-            ></span>
-            <span class="ml-2">Hosting</span>
+            <span class="inline-flex justify-center w-6">
+              <img src="./assets/domain.svg" />
+            </span>
+            <span class="ml-2 menu-item-text">Domains</span>
           </a>
           <a
-            href="#"
+            href="/src/hosting.html"
+            id="hosting-link"
             class="flex items-center p-2 text-gray-600 hover:bg-gray-200 hover:text-gray-700"
           >
-            <span class="inline-flex justify-center w-6"
-              ><i class="fa fa-shield-alt"></i
-            ></span>
-            <span class="ml-2">Manage Security</span>
+            <span class="inline-flex justify-center w-6">
+              <img src="./assets/hosting.svg" />
+            </span>
+            <span class="ml-2 menu-item-text">Hosting</span>
           </a>
+          <div class="flex flex-col">
+            <button
+              class="flex items-center p-2 text-gray-600 hover:bg-gray-200 hover:text-gray-700"
+              onclick="toggleDropdown('manageServers')"
+            >
+              <span class="inline-flex justify-center w-6">
+                <img src="./assets/manage_server.svg" />
+              </span>
+              <span class="ml-2 menu-item-text">Manage Servers</span>
+              <span class="ml-auto">
+                <i id="manageServers-icon" class="fas"></i>
+              </span>
+            </button>
+            <div id="manageServers" class="ml-8 hidden">
+              <a
+                href="/src/dedicated-servers"
+                class="block p-2 text-gray-600 hover:bg-gray-200 hover:text-gray-700"
+                >Dedicated Servers</a
+              >
+              <a
+                href="/src/virtual-servers"
+                class="block p-2 text-gray-600 hover:bg-gray-200 hover:text-gray-700"
+                >Virtual Servers</a
+              >
+            </div>
+          </div>
+          <div class="flex flex-col">
+            <button
+              class="flex items-center p-2 text-gray-600 hover:bg-gray-200 hover:text-gray-700"
+              onclick="toggleDropdown('manageSecurity')"
+            >
+              <span class="inline-flex justify-center w-6">
+                <img src="./assets/manage_security.svg" />
+              </span>
+              <span class="ml-2 menu-item-text">Manage Security</span>
+              <span class="ml-auto">
+                <i id="manageSecurity-icon" class="fas"></i>
+              </span>
+            </button>
+            <div id="manageSecurity" class="ml-8 hidden">
+              <a
+                href="/src/ssl-certificate"
+                class="block p-2 text-gray-600 hover:bg-gray-200 hover:text-gray-700"
+                >SSL Certificate</a
+              >
+              <a
+                href="/src/website-security"
+                class="block p-2 text-gray-600 hover:bg-gray-200 hover:text-gray-700"
+                >Website Security</a
+              >
+              <a
+                href="/src/email-security"
+                class="block p-2 text-gray-600 hover:bg-gray-200 hover:text-gray-700"
+                >Email Security</a
+              >
+            </div>
+          </div>
           <a
-            href="#"
+            href="/src/email-management"
+            id="email-management-link"
             class="flex items-center p-2 text-gray-600 hover:bg-gray-200 hover:text-gray-700"
           >
-            <span class="inline-flex justify-center w-6"
-              ><i class="fa fa-envelope"></i
-            ></span>
-            <span class="ml-2">Email Management</span>
+            <span class="inline-flex justify-center w-6">
+              <img src="./assets/email.svg" />
+            </span>
+            <span class="ml-2 menu-item-text">Email Management</span>
           </a>
+          <div class="flex flex-col">
+            <button
+              class="flex items-center p-2 text-gray-600 hover:bg-gray-200 hover:text-gray-700"
+              onclick="toggleDropdown('payments')"
+            >
+              <span class="inline-flex justify-center w-6">
+                <img src="./assets/payment.svg" />
+              </span>
+              <span class="ml-2 menu-item-text">Payments</span>
+              <span class="ml-auto">
+                <i id="payments-icon" class="fas"></i>
+              </span>
+            </button>
+            <div id="payments" class="ml-8 hidden">
+              <a
+                href="/src/transaction.html"
+                class="block p-2 text-gray-600 hover:bg-gray-200 hover:text-gray-700"
+                >Transaction History</a
+              >
+              <a
+                href="/src/dash_payment.html"
+                class="block p-2 text-gray-600 hover:bg-gray-200 hover:text-gray-700"
+                >Payment Methods</a
+              >
+            </div>
+          </div>
           <a
-            href="#"
+            href="/src/setting.html"
+            id="settings-link"
             class="flex items-center p-2 text-gray-600 hover:bg-gray-200 hover:text-gray-700"
           >
-            <span class="inline-flex justify-center w-6"
-              ><i class="fa fa-dollar-sign"></i
-            ></span>
-            <span class="ml-2">Payments</span>
-          </a>
-          <a
-            href="#"
-            class="flex items-center p-2 text-gray-600 hover:bg-gray-200 hover:text-gray-700"
-          >
-            <span class="inline-flex justify-center w-6"
-              ><i class="fa fa-cog"></i
-            ></span>
-            <span class="ml-2">Settings</span>
+            <span class="inline-flex justify-center w-6">
+              <img src="./assets/settings.svg" />
+            </span>
+            <span class="ml-2 menu-item-text">Settings</span>
           </a>
         </nav>
         <a
           href="#"
-          class="flex items-center p-2 text-gray-600 hover:bg-gray-200 hover:text-gray-700 absolute bottom-0 w-full"
+          class="flex items-center p-2 text-gray-600 hover:bg-gray-200 hover:text-gray-700 absolute bottom-0 block"
         >
-          <span class="inline-flex justify-center w-6"
-            ><i class="fa fa-sign-out-alt"></i
-          ></span>
-          <span class="ml-2">Log Out</span>
+          <span class="inline-flex justify-center w-6">
+            <img src="./assets/logout.svg" />
+          </span>
+          <span class="ml-2 menu-item-text">Log Out</span>
         </a>
       </div>
 
       <!-- Main Content -->
-      <div class="w-full md:w-4/5 h-screen p-6 bg-gray-50">
-        <div class="bg-white p-6 rounded-lg shadow-lg">
-          <h2 class="text-2xl font-bold mb-6">Dashboard</h2>
+      <div class="w-full p-6">
+        <div class="p-6">
+          <div class="flex items-center gap-4">
+            <img src="./assets/dashboard.svg" />
+            <h2 class="text-xl">Dashboard</h2>
+          </div>
           <div
             class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6"
           >
-            <div class="bg-white p-4 rounded shadow">
+            <div class="bg-white p-4 rounded-md py-8 shadow-md">
               <div class="text-center">
+                <p class="text-2xl">Domains</p>
                 <p class="text-3xl font-bold">5</p>
-                <p class="text-gray-600">Domains</p>
+                <p class="text-sm">ALL-TIME DATA</p>
               </div>
             </div>
-            <div class="bg-white p-4 rounded shadow">
+            <div class="bg-white p-4 rounded-md py-8 shadow-md">
               <div class="text-center">
-                <p class="text-3xl font-bold">20</p>
-                <p class="text-gray-600">Dashboard Item</p>
+                <p class="text-xl">Dashboard Item</p>
+                <p class="text-2xl font-bold">20</p>
+                <p class="text-sm">ALL-TIME DATA</p>
               </div>
             </div>
-            <div class="bg-white p-4 rounded shadow">
+            <div class="bg-white p-4 rounded-md py-8 shadow-md">
               <div class="text-center">
-                <p class="text-3xl font-bold">35</p>
-                <p class="text-gray-600">Dashboard Item</p>
+                <p class="text-xl">Dashboard Item</p>
+                <p class="text-2xl font-bold">35</p>
+                <p class="text-sm">ALL-TIME DATA</p>
               </div>
             </div>
-            <div class="bg-white p-4 rounded shadow">
+            <div class="bg-white p-4 rounded-md py-8 shadow-md">
               <div class="text-center">
-                <p class="text-3xl font-bold">3</p>
-                <p class="text-gray-600">Dashboard Item</p>
+                <p class="text-xl">Dashboard Item</p>
+                <p class="text-2xl font-bold">3</p>
+                <p class="text-sm">ALL-TIME DATA</p>
               </div>
             </div>
           </div>
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            <div class="bg-white p-4 rounded shadow">
-              <h3 class="text-xl font-semibold mb-4">Title of table data</h3>
-              <ul class="list-none">
-                <li class="flex justify-between border-b py-2">
-                  <span>1</span>
-                  <span>Item A</span>
-                  <span>Remarks or category</span>
-                </li>
-                <li class="flex justify-between border-b py-2">
-                  <span>2</span>
-                  <span>Item B</span>
-                  <span>Remarks or category</span>
-                </li>
-                <li class="flex justify-between border-b py-2">
-                  <span>3</span>
-                  <span>Item C</span>
-                  <span>Remarks or category</span>
-                </li>
-                <li class="flex justify-between border-b py-2">
-                  <span>4</span>
-                  <span>Item D</span>
-                  <span>Remarks or category</span>
-                </li>
-                <li class="flex justify-between border-b py-2">
-                  <span>5</span>
-                  <span>Item E</span>
-                  <span>Remarks or category</span>
-                </li>
-                <li class="flex justify-between border-b py-2">
-                  <span>6</span>
-                  <span>Item F</span>
-                  <span>Remarks or category</span>
-                </li>
-                <li class="flex justify-between border-b py-2">
-                  <span>7</span>
-                  <span>Item G</span>
-                  <span>Remarks or category</span>
-                </li>
-                <li class="flex justify-between border-b py-2">
-                  <span>8</span>
-                  <span>Item H</span>
-                  <span>Remarks or category</span>
-                </li>
-                <li class="flex justify-between border-b py-2">
-                  <span>9</span>
-                  <span>Item I</span>
-                  <span>Remarks or category</span>
-                </li>
-                <li class="flex justify-between border-b py-2">
-                  <span>10</span>
-                  <span>Item J</span>
-                  <span>Remarks or category</span>
-                </li>
-              </ul>
-            </div>
-            <div class="bg-white p-4 rounded shadow">
-              <div class="flex justify-between mb-4">
-                <div class="flex items-center space-x-2">
-                  <input
-                    type="text"
-                    class="border border-gray-300 p-2 rounded"
-                    placeholder="Start date"
-                  />
-                  <input
-                    type="text"
-                    class="border border-gray-300 p-2 rounded"
-                    placeholder="End date"
-                  />
-                </div>
-                <button class="bg-blue-500 text-white px-4 py-2 rounded">
-                  Custom
-                </button>
+            <div class="bg-white p-4 rounded-lg shadow-md">
+              <div class="border-b border-gray-200 mb-4">
+                <ul class="flex">
+                  <li class="mr-6">
+                    <a
+                      href="#current"
+                      class="inline-block py-2 px-4 text-blue-600 font-semibold border-b-2 border-blue-600"
+                      >CURRENT MONTH</a
+                    >
+                  </li>
+                  <li class="mr-6">
+                    <a
+                      href="#all-time"
+                      class="inline-block py-2 px-4 text-gray-600 hover:text-blue-600"
+                      >ALL-TIME DATA</a
+                    >
+                  </li>
+                  <li class="mr-6">
+                    <a
+                      href="#custom"
+                      class="inline-block py-2 px-4 text-gray-600 hover:text-blue-600"
+                      >CUSTOM</a
+                    >
+                  </li>
+                </ul>
               </div>
-              <h3 class="text-xl font-semibold mb-4">Title of table data</h3>
-              <ul class="list-none">
-                <li class="flex justify-between border-b py-2">
-                  <span>1</span>
-                  <span>Item A</span>
-                  <span>Remarks or category</span>
-                </li>
-                <li class="flex justify-between border-b py-2">
-                  <span>2</span>
-                  <span>Item B</span>
-                  <span>Remarks or category</span>
-                </li>
-                <li class="flex justify-between border-b py-2">
-                  <span>3</span>
-                  <span>Item C</span>
-                  <span>Remarks or category</span>
-                </li>
-                <li class="flex justify-between border-b py-2">
-                  <span>4</span>
-                  <span>Item D</span>
-                  <span>Remarks or category</span>
-                </li>
-                <li class="flex justify-between border-b py-2">
-                  <span>5</span>
-                  <span>Item E</span>
-                  <span>Remarks or category</span>
-                </li>
-                <li class="flex justify-between border-b py-2">
-                  <span>6</span>
-                  <span>Item F</span>
-                  <span>Remarks or category</span>
-                </li>
-                <li class="flex justify-between border-b py-2">
-                  <span>7</span>
-                  <span>Item G</span>
-                  <span>Remarks or category</span>
-                </li>
-                <li class="flex justify-between border-b py-2">
-                  <span>8</span>
-                  <span>Item H</span>
-                  <span>Remarks or category</span>
-                </li>
-                <li class="flex justify-between border-b py-2">
-                  <span>9</span>
-                  <span>Item I</span>
-                  <span>Remarks or category</span>
-                </li>
-                <li class="flex justify-between border-b py-2">
-                  <span>10</span>
-                  <span>Item J</span>
-                  <span>Remarks or category</span>
-                </li>
-              </ul>
+              <div id="current" class="tab-content">
+                <h2 class="text-xl font-bold mb-4">Title of table data</h2>
+                <ul>
+                  <li class="flex justify-between py-2">
+                    <span class="font-bold"
+                      ><span class="mr-10">1</span> Item A</span
+                    >
+                    <span>Remarks or category</span>
+                  </li>
+                  <li class="flex justify-between py-2">
+                    <span class="font-bold"
+                      ><span class="mr-10">2</span> Item B</span
+                    >
+                    <span>Remarks or category</span>
+                  </li>
+                  <li class="flex justify-between py-2">
+                    <span class="font-bold"
+                      ><span class="mr-10">3</span> Item C</span
+                    >
+                    <span>Remarks or category</span>
+                  </li>
+                  <li class="flex justify-between py-2">
+                    <span class="font-bold"
+                      ><span class="mr-10">4</span> Item D</span
+                    >
+                    <span>Remarks or category</span>
+                  </li>
+                  <li class="flex justify-between py-2">
+                    <span class="font-bold"
+                      ><span class="mr-10">5</span> Item E</span
+                    >
+                    <span>Remarks or category</span>
+                  </li>
+                  <li class="flex justify-between py-2">
+                    <span class="font-bold"
+                      ><span class="mr-10">6</span> Item F</span
+                    >
+                    <span>Remarks or category</span>
+                  </li>
+                  <li class="flex justify-between py-2">
+                    <span class="font-bold"
+                      ><span class="mr-10">7</span> Item G</span
+                    >
+                    <span>Remarks or category</span>
+                  </li>
+                  <li class="flex justify-between py-2">
+                    <span class="font-bold"
+                      ><span class="mr-10">8</span> Item H</span
+                    >
+                    <span>Remarks or category</span>
+                  </li>
+                  <li class="flex justify-between py-2">
+                    <span class="font-bold"
+                      ><span class="mr-10">9</span> Item I</span
+                    >
+                    <span>Remarks or category</span>
+                  </li>
+                  <li class="flex justify-between py-2">
+                    <span class="font-bold"
+                      ><span class="mr-10">10</span> Item J</span
+                    >
+                    <span>Remarks or category</span>
+                  </li>
+                </ul>
+              </div>
+              <div id="all-time" class="tab-content hidden">
+                <!-- All-time data content here -->
+              </div>
+              <div id="custom" class="tab-content hidden">
+                <!-- Custom data content here -->
+              </div>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-md">
+              <div class="border-b border-gray-200 mb-4">
+                <ul class="flex">
+                  <li class="mr-6">
+                    <a
+                      href="#current"
+                      class="inline-block py-2 px-4 text-blue-600 font-semibold border-b-2 border-blue-600"
+                      >CURRENT MONTH</a
+                    >
+                  </li>
+                  <li class="mr-6">
+                    <a
+                      href="#all-time"
+                      class="inline-block py-2 px-4 text-gray-600 hover:text-blue-600"
+                      >ALL-TIME DATA</a
+                    >
+                  </li>
+                  <li class="mr-6">
+                    <a
+                      href="#custom"
+                      class="inline-block py-2 px-4 text-gray-600 hover:text-blue-600"
+                      >CUSTOM</a
+                    >
+                  </li>
+                </ul>
+              </div>
+
+              <div class="tab-content">
+                <div class="flex items-center justify-center space-x-4 mb-4">
+                  <div class="relative">
+                    <input
+                      type="date"
+                      class="border border-gray-300 rounded-md py-2 px-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      placeholder="Start date"
+                    />
+                  </div>
+                  <span>to</span>
+                  <div class="relative">
+                    <input
+                      type="date"
+                      class="border border-gray-300 rounded-md py-2 px-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      placeholder="End date"
+                    />
+                  </div>
+                </div>
+                <h2 class="text-xl font-bold mb-4">Title of table data</h2>
+                <ul>
+                  <li class="flex justify-between py-2">
+                    <span class="font-bold"
+                      ><span class="mr-10">1</span> Item A</span
+                    >
+                    <span>Remarks or category</span>
+                  </li>
+                  <li class="flex justify-between py-2">
+                    <span class="font-bold"
+                      ><span class="mr-10">2</span> Item B</span
+                    >
+                    <span>Remarks or category</span>
+                  </li>
+                  <li class="flex justify-between py-2">
+                    <span class="font-bold"
+                      ><span class="mr-10">3</span> Item C</span
+                    >
+                    <span>Remarks or category</span>
+                  </li>
+                  <li class="flex justify-between py-2">
+                    <span class="font-bold"
+                      ><span class="mr-10">4</span> Item D</span
+                    >
+                    <span>Remarks or category</span>
+                  </li>
+                  <li class="flex justify-between py-2">
+                    <span class="font-bold"
+                      ><span class="mr-10">5</span> Item E</span
+                    >
+                    <span>Remarks or category</span>
+                  </li>
+                  <li class="flex justify-between py-2">
+                    <span class="font-bold"
+                      ><span class="mr-10">6</span> Item F</span
+                    >
+                    <span>Remarks or category</span>
+                  </li>
+                  <li class="flex justify-between py-2">
+                    <span class="font-bold"
+                      ><span class="mr-10">7</span> Item G</span
+                    >
+                    <span>Remarks or category</span>
+                  </li>
+                  <li class="flex justify-between py-2">
+                    <span class="font-bold"
+                      ><span class="mr-10">8</span> Item H</span
+                    >
+                    <span>Remarks or category</span>
+                  </li>
+                  <li class="flex justify-between py-2">
+                    <span class="font-bold"
+                      ><span class="mr-10">9</span> Item I</span
+                    >
+                    <span>Remarks or category</span>
+                  </li>
+                  <li class="flex justify-between py-2">
+                    <span class="font-bold"
+                      ><span class="mr-10">10</span> Item J</span
+                    >
+                    <span>Remarks or category</span>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+
+    <script src="main.js"></script>
   </body>
 </html>

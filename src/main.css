@@ -90,3 +90,27 @@ p {
 .btn:hover::after {
   color: white;
 } */
+
+.hidden {
+  display: none;
+}
+.sidebar-collapsed .menu-item-text {
+  display: none;
+}
+.sidebar-collapsed {
+  width: 80px;
+}
+.sidebar-expanded {
+  width: 260px;
+}
+.active-tab {
+  background-color: #d7e7e3;
+}
+.active-tab .menu-item-text {
+  color: black;
+  font-weight: bold;
+}
+.dpdwn-active {
+  background-color: #d7e7e3;
+}
+
