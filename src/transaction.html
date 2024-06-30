@@ -11,7 +11,10 @@
     />
   </head>
   <body class="bg-gray-100 font-sans leading-normal tracking-normal">
-    <div class="flex justify-between items-center bg-white p-4 shadow-md">
+    <div class="flex justify-between items-center bg-white shadow-md p-4">
+      <div class="flex items-center md:hidden">
+        <i class="fa fa-bars fa-lg" onclick="toggleSidebar()"></i>
+      </div>
       <div class="flex items-center space-x-4">
         <img
           src="./assets/avatar.svg"
@@ -20,7 +23,7 @@
         />
         <span class="text-xl font-semibold">Admin</span>
       </div>
-      <div class="relative flex-1 mx-4">
+      <div class="relative flex-1 mx-4 hidden md:block">
         <input
           type="text"
           placeholder="Search"
@@ -41,182 +44,182 @@
     <div class="flex flex-col md:flex-row p-4 bg-[#fbfdfc]">
       <!-- Sidebar -->
       <div
-        id="sidebar"
-        class="sidebar-expanded flex shadow-3xl rounded p-4 relative transition-all duration-300 flex-col bg-white shadow-md rounded-md"
-      >
-        <div class="flex items-center justify-end h-20 border-b">
-          <button onclick="toggleSidebar()" class="focus:outline-none">
-            <div class="flex items-center">
-              <!-- <i class="fas fa-bars"></i> -->
-              <img src="./assets/sidebar.svg" />
-              <img src="./assets/arrow_left.svg" />
-            </div>
-          </button>
-        </div>
-        <nav class="mt-10">
-          <a
-            href="/dashboard.html"
-            id="dashboard-link"
-            class="flex items-center p-2 text-gray-600 hover:bg-gray-200 hover:text-gray-700"
-          >
-            <span class="inline-flex justify-center w-6">
-              <img src="./assets/dashboard.svg" />
-            </span>
-            <span class="ml-2 menu-item-text">Dashboard</span>
-          </a>
-          <a
-            href="/src/domains.html"
-            id="domains-link"
-            class="flex items-center p-2 text-gray-600 hover:bg-gray-200 hover:text-gray-700"
-          >
-            <span class="inline-flex justify-center w-6">
-              <img src="./assets/domain.svg" />
-            </span>
-            <span class="ml-2 menu-item-text">Domains</span>
-          </a>
-          <a
-            href="/hosting.html"
-            id="hosting-link"
-            class="flex items-center p-2 text-gray-600 hover:bg-gray-200 hover:text-gray-700"
-          >
-            <span class="inline-flex justify-center w-6">
-              <img src="./assets/hosting.svg" />
-            </span>
-            <span class="ml-2 menu-item-text">Hosting</span>
-          </a>
-          <div class="flex flex-col dpdwn">
-            <button
-              class="flex items-center p-2 text-gray-600 hover:bg-gray-200 hover:text-gray-700"
-              onclick="toggleDropdown('manageServers')"
-            >
-              <span class="inline-flex justify-center w-6">
-                <img src="./assets/manage_server.svg" />
-              </span>
-              <span class="ml-2 menu-item-text">Manage Servers</span>
-              <span class="ml-auto">
-                <i id="manageServers-icon" class="fas"></i>
-              </span>
-            </button>
-            <div id="manageServers" class="ml-8 hidden">
-              <a
-                href="/src/dedicated-servers"
-                class="block p-2 text-gray-600 hover:bg-gray-200 hover:text-gray-700"
-                >Dedicated Servers</a
-              >
-              <a
-                href="/src/virtual-servers"
-                class="block p-2 text-gray-600 hover:bg-gray-200 hover:text-gray-700"
-                >Virtual Servers</a
-              >
-            </div>
+      id="sidebar"
+      class="sidebar-expanded min-h-full md:flex hidden shadow-3xl rounded p-4 absolute transition-all duration-300 flex-col bg-white shadow-md rounded-md md:relative md:z-0 md:flex md:flex-col md:bg-white md:shadow-md md:rounded-md absolute z-50"
+    >
+      <div class="flex items-center justify-end">
+        <button onclick="toggleSidebar()" class="focus:outline-none">
+          <div class="flex items-center">
+            <!-- <i class="fas fa-bars"></i> -->
+            <img src="./assets/sidebar.svg" />
+            <img src="./assets/arrow_left.svg" />
           </div>
-          <div class="flex flex-col dpdwn">
-            <button
-              class="flex items-center p-2 text-gray-600 hover:bg-gray-200 hover:text-gray-700"
-              onclick="toggleDropdown('manageSecurity')"
-            >
-              <span class="inline-flex justify-center w-6">
-                <img src="./assets/manage_security.svg" />
-              </span>
-              <span class="ml-2 menu-item-text">Manage Security</span>
-              <span class="ml-auto">
-                <i id="manageSecurity-icon" class="fas"></i>
-              </span>
-            </button>
-            <div id="manageSecurity" class="ml-8 hidden">
-              <a
-                href="/src/ssl-certificate"
-                class="block p-2 text-gray-600 hover:bg-gray-200 hover:text-gray-700"
-                >SSL Certificate</a
-              >
-              <a
-                href="/src/website-security"
-                class="block p-2 text-gray-600 hover:bg-gray-200 hover:text-gray-700"
-                >Website Security</a
-              >
-              <a
-                href="/src/email-security"
-                class="block p-2 text-gray-600 hover:bg-gray-200 hover:text-gray-700"
-                >Email Security</a
-              >
-            </div>
-          </div>
-          <a
-            href="/src/email-management"
-            id="email-management-link"
-            class="flex items-center p-2 text-gray-600 hover:bg-gray-200 hover:text-gray-700"
-          >
-            <span class="inline-flex justify-center w-6">
-              <img src="./assets/email.svg" />
-            </span>
-            <span class="ml-2 menu-item-text">Email Management</span>
-          </a>
-          <div class="flex flex-col dpdwn">
-            <button
-              class="flex items-center p-2 text-gray-600 hover:bg-gray-200 hover:text-gray-700"
-              onclick="toggleDropdown('payments')"
-            >
-              <span class="inline-flex justify-center w-6">
-                <img src="./assets/payment.svg" />
-              </span>
-              <span class="ml-2 menu-item-text">Payments</span>
-              <span class="ml-auto">
-                <i id="payments-icon" class="fas"></i>
-              </span>
-            </button>
-            <div id="payments" class="ml-8 hidden">
-              <a
-                href="/transaction.html"
-                class="block p-2 text-gray-600 hover:bg-gray-200 hover:text-gray-700"
-                >Transaction History</a
-              >
-              <a
-                href="/dash_payment.html"
-                class="block p-2 text-gray-600 hover:bg-gray-200 hover:text-gray-700"
-                >Payment Methods</a
-              >
-            </div>
-          </div>
-          <a
-            href="/setting.html"
-            id="settings-link"
-            class="flex items-center p-2 text-gray-600 hover:bg-gray-200 hover:text-gray-700"
-          >
-            <span class="inline-flex justify-center w-6">
-              <img src="./assets/settings.svg" />
-            </span>
-            <span class="ml-2 menu-item-text">Settings</span>
-          </a>
-        </nav>
+        </button>
+      </div>
+      <nav class="md:mt-10 mt-5">
         <a
-          href="#"
-          class="flex items-center p-2 text-gray-600 hover:bg-gray-200 hover:text-gray-700 absolute bottom-0 block"
+          href="/dashboard.html"
+          id="dashboard-link"
+          class="flex items-center p-2 text-heading hover:bg-gray-200 hover:text-gray-700"
         >
           <span class="inline-flex justify-center w-6">
-            <img src="./assets/logout.svg" />
+            <img src="./assets/dashboard.svg" />
           </span>
-          <span class="ml-2 menu-item-text">Log Out</span>
+          <span class="ml-2 menu-item-text text-dash">Dashboard</span>
         </a>
-      </div>
+        <a
+          href="/src/domains.html"
+          id="domains-link"
+          class="flex items-center p-2 text-heading hover:bg-gray-200 hover:text-gray-700"
+        >
+          <span class="inline-flex justify-center w-6">
+            <img src="./assets/domain.svg" />
+          </span>
+          <span class="ml-2 menu-item-text">Domains</span>
+        </a>
+        <a
+          href="/hosting.html"
+          id="hosting-link"
+          class="flex items-center p-2 text-heading hover:bg-gray-200 hover:text-gray-700"
+        >
+          <span class="inline-flex justify-center w-6">
+            <img src="./assets/hosting.svg" />
+          </span>
+          <span class="ml-2 menu-item-text">Hosting</span>
+        </a>
+        <div class="flex flex-col">
+          <button
+            class="flex items-center p-2 text-heading hover:bg-gray-200 hover:text-gray-700"
+            onclick="toggleDropdown('manageServers')"
+          >
+            <span class="inline-flex justify-center w-6">
+              <img src="./assets/manage_server.svg" />
+            </span>
+            <span class="ml-2 menu-item-text">Manage Servers</span>
+            <span class="ml-auto">
+              <i id="manageServers-icon" class="fas"></i>
+            </span>
+          </button>
+          <div id="manageServers" class="ml-8 hidden">
+            <a
+              href="/src/dedicated-servers"
+              class="block p-2 text-heading hover:bg-gray-200 hover:text-gray-700"
+              >Dedicated Servers</a
+            >
+            <a
+              href="/src/virtual-servers"
+              class="block p-2 text-heading hover:bg-gray-200 hover:text-gray-700"
+              >Virtual Servers</a
+            >
+          </div>
+        </div>
+        <div class="flex flex-col">
+          <button
+            class="flex items-center p-2 text-heading hover:bg-gray-200 hover:text-gray-700"
+            onclick="toggleDropdown('manageSecurity')"
+          >
+            <span class="inline-flex justify-center w-6">
+              <img src="./assets/manage_security.svg" />
+            </span>
+            <span class="ml-2 menu-item-text">Manage Security</span>
+            <span class="ml-auto">
+              <i id="manageSecurity-icon" class="fas"></i>
+            </span>
+          </button>
+          <div id="manageSecurity" class="ml-8 hidden">
+            <a
+              href="/src/ssl-certificate"
+              class="block p-2 text-heading hover:bg-gray-200 hover:text-gray-700"
+              >SSL Certificate</a
+            >
+            <a
+              href="/src/website-security"
+              class="block p-2 text-heading hover:bg-gray-200 hover:text-gray-700"
+              >Website Security</a
+            >
+            <a
+              href="/src/email-security"
+              class="block p-2 text-heading hover:bg-gray-200 hover:text-gray-700"
+              >Email Security</a
+            >
+          </div>
+        </div>
+        <a
+          href="/src/email-management"
+          id="email-management-link"
+          class="flex items-center p-2 text-heading hover:bg-gray-200 hover:text-gray-700"
+        >
+          <span class="inline-flex justify-center w-6">
+            <img src="./assets/email.svg" />
+          </span>
+          <span class="ml-2 menu-item-text">Email Management</span>
+        </a>
+        <div class="flex flex-col">
+          <button
+            class="flex items-center p-2 text-heading hover:bg-gray-200 hover:text-gray-700"
+            onclick="toggleDropdown('payments')"
+          >
+            <span class="inline-flex justify-center w-6">
+              <img src="./assets/payment.svg" />
+            </span>
+            <span class="ml-2 menu-item-text">Payments</span>
+            <span class="ml-auto">
+              <i id="payments-icon" class="fas"></i>
+            </span>
+          </button>
+          <div id="payments" class="ml-8 hidden">
+            <a
+              href="/transaction.html"
+              class="block p-2 text-heading hover:bg-gray-200 hover:text-gray-700"
+              >Transaction History</a
+            >
+            <a
+              href="/dash_payment.html"
+              class="block p-2 text-heading hover:bg-gray-200 hover:text-gray-700"
+              >Payment Methods</a
+            >
+          </div>
+        </div>
+        <a
+          href="/setting.html"
+          id="settings-link"
+          class="flex items-center p-2 text-heading hover:bg-gray-200 hover:text-gray-700"
+        >
+          <span class="inline-flex justify-center w-6">
+            <img src="./assets/settings.svg" />
+          </span>
+          <span class="ml-2 menu-item-text">Settings</span>
+        </a>
+      </nav>
+      <a
+        href="#"
+        class="flex items-center p-2 text-heading hover:bg-gray-200 hover:text-gray-700 absolute bottom-0 block mt-10"
+      >
+        <span class="inline-flex justify-center w-6">
+          <img src="./assets/logout.svg" />
+        </span>
+        <span class="ml-2 menu-item-text">Log Out</span>
+      </a>
+    </div>
 
       <!-- Main Content -->
-      <div class="w-full h-screen p-6">
-        <div class="p-6">
-          <div class="flex items-center gap-4">
+      <div class="w-full h-screen">
+        <div class="md:p-6 p-2">
+          <div class="flex items-center gap-3 mb-4">
             <img src="./assets/payment.svg" />
             <h2 class="text-xl text-dash">Transaction</h2>
           </div>
           <h2 class="text-2xl font-bold mb-6">Transaction History</h2>
-          <div class="flex justify-between items-center py-4">
-            <div class="flex items-center space-x-4">
+          <div class="flex justify-between items-center py-4 flex-wrap gap-4">
+            <div class="flex items-center gap-4 flex-wrap">
               <button
-                class="flex items-center px-4 py-2 bg-white border border-gray-300 rounded text-gray-600 hover:bg-gray-100"
+                class="flex items-center px-4 py-2 bg-white border border-gray-300 rounded text-heading hover:bg-gray-100"
               >
                 <img src="./assets/filter.svg" class="mr-2" />
                 Filters
               </button>
 
-              <span class="text-gray-600">2 row(s) selected</span>
+              <span class="text-heading">2 row(s) selected</span>
             </div>
             <div class="relative">
               <input
@@ -242,29 +245,29 @@
             <table class="min-w-full bg-white shadow-md rounded-md">
               <thead class="bg-[#F7FAF9] text-gray-700">
                 <tr>
-                  <th class="w-12 py-3 px-4 text-left">
+                  <th class="w-12 py-3 px-4 text-left text-heading">
                     <input type="checkbox" />
                   </th>
-                  <th class="py-3 px-4 text-left">
+                  <th class="py-3 px-4 text-left text-heading">
                     Item <i class="fas fa-arrow-down text-dash pl-4 fa-sm"></i>
                   </th>
-                  <th class="py-3 px-4 text-left">
+                  <th class="py-3 px-4 text-left text-heading">
                     Payment Type
                     <i class="fas fa-arrow-down text-dash pl-4 fa-sm"></i>
                   </th>
-                  <th class="py-3 px-4 text-left">
+                  <th class="py-3 px-4 text-left text-heading">
                     Transaction ID
                     <i class="fas fa-arrow-down text-dash pl-4 fa-sm"></i>
                   </th>
-                  <th class="py-3 px-4 text-left">
+                  <th class="py-3 px-4 text-left text-heading">
                     Date & Time
                     <i class="fas fa-arrow-down text-dash pl-4 fa-sm"></i>
                   </th>
-                  <th class="py-3 px-4 text-left">
+                  <th class="py-3 px-4 text-left text-heading">
                     Status
                     <i class="fas fa-arrow-down text-dash pl-4 fa-sm"></i>
                   </th>
-                  <th class="py-3 px-4 text-left">
+                  <th class="py-3 px-4 text-left text-heading">
                     Manage
                     <i class="fas fa-arrow-down text-dash pl-4 fa-sm"></i>
                   </th>
@@ -282,10 +285,10 @@
                     Success
                   </td>
                   <td class="py-3 px-4 flex space-x-2">
-                    <button><i class="fa fa-eye text-gray-600"></i></button>
-                    <button><i class="fa fa-pen text-gray-600"></i></button>
+                    <button><i class="fa fa-eye text-heading"></i></button>
+                    <button><i class="fa fa-pen text-heading"></i></button>
                     <button>
-                      <i class="far fa-trash-alt text-gray-600"></i>
+                      <i class="far fa-trash-alt text-heading"></i>
                     </button>
                   </td>
                 </tr>
@@ -300,10 +303,10 @@
                     Pending
                   </td>
                   <td class="py-3 px-4 flex space-x-2">
-                    <button><i class="fa fa-eye text-gray-600"></i></button>
-                    <button><i class="fa fa-pen text-gray-600"></i></button>
+                    <button><i class="fa fa-eye text-heading"></i></button>
+                    <button><i class="fa fa-pen text-heading"></i></button>
                     <button>
-                      <i class="far fa-trash-alt text-gray-600"></i>
+                      <i class="far fa-trash-alt text-heading"></i>
                     </button>
                   </td>
                 </tr>
@@ -318,10 +321,10 @@
                     Success
                   </td>
                   <td class="py-3 px-4 flex space-x-2">
-                    <button><i class="fa fa-eye text-gray-600"></i></button>
-                    <button><i class="fa fa-pen text-gray-600"></i></button>
+                    <button><i class="fa fa-eye text-heading"></i></button>
+                    <button><i class="fa fa-pen text-heading"></i></button>
                     <button>
-                      <i class="far fa-trash-alt text-gray-600"></i>
+                      <i class="far fa-trash-alt text-heading"></i>
                     </button>
                   </td>
                 </tr>
@@ -336,10 +339,10 @@
                     Success
                   </td>
                   <td class="py-3 px-4 flex space-x-2">
-                    <button><i class="fa fa-eye text-gray-600"></i></button>
-                    <button><i class="fa fa-pen text-gray-600"></i></button>
+                    <button><i class="fa fa-eye text-heading"></i></button>
+                    <button><i class="fa fa-pen text-heading"></i></button>
                     <button>
-                      <i class="far fa-trash-alt text-gray-600"></i>
+                      <i class="far fa-trash-alt text-heading"></i>
                     </button>
                   </td>
                 </tr>
@@ -354,28 +357,30 @@
                     Success
                   </td>
                   <td class="py-3 px-4 flex space-x-2">
-                    <button><i class="fa fa-eye text-gray-600"></i></button>
-                    <button><i class="fa fa-pen text-gray-600"></i></button>
+                    <button><i class="fa fa-eye text-heading"></i></button>
+                    <button><i class="fa fa-pen text-heading"></i></button>
                     <button>
-                      <i class="far fa-trash-alt text-gray-600"></i>
+                      <i class="far fa-trash-alt text-heading"></i>
                     </button>
                   </td>
                 </tr>
               </tbody>
             </table>
-            <div class="flex justify-between items-center bg-[#F7FAF9] p-3">
-              <button
-                class="bg-white text-dash px-4 py-2 rounded border border-dash"
-              >
-                Previous
-              </button>
-              <div>Page 1 of 1</div>
-              <button
-                class="bg-white text-dash px-4 py-2 rounded border border-dash"
-              >
-                Next
-              </button>
-            </div>
+          </div>
+          <div
+            class="flex justify-between items-center bg-[#F7FAF9] p-3 w-full"
+          >
+            <button
+              class="bg-white text-dash px-4 py-2 rounded border border-dash"
+            >
+              Previous
+            </button>
+            <div>Page 1 of 1</div>
+            <button
+              class="bg-white text-dash px-4 py-2 rounded border border-dash"
+            >
+              Next
+            </button>
           </div>
         </div>
       </div>

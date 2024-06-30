@@ -22,6 +22,8 @@ module.exports = {
         secondary: "#23557F",
         primary: "#4AB39A",
         dash: "#93A19E",
+        label: "#424242",
+        heading: "#112923",
         light: {
           primary: "#FFFFFF",
           secondary: "#23557F",

@@ -12,6 +12,9 @@
   </head>
   <body class="font-sans leading-normal tracking-normal">
     <div class="flex justify-between items-center bg-white shadow-md p-4">
+      <div class="flex items-center md:hidden">
+        <i class="fa fa-bars fa-lg" onclick="toggleSidebar()"></i>
+      </div>
       <div class="flex items-center space-x-4">
         <img
           src="./assets/avatar.svg"
@@ -20,7 +23,7 @@
         />
         <span class="text-xl font-semibold">Admin</span>
       </div>
-      <div class="relative flex-1 mx-4">
+      <div class="relative flex-1 mx-4 hidden md:block">
         <input
           type="text"
           placeholder="Search"
@@ -42,9 +45,9 @@
       <!-- Sidebar -->
       <div
         id="sidebar"
-        class="sidebar-expanded flex shadow-3xl rounded p-4 relative transition-all duration-300 flex-col bg-white shadow-md rounded-md"
+        class="sidebar-expanded min-h-full md:flex hidden shadow-3xl rounded p-4 absolute transition-all duration-300 flex-col bg-white shadow-md rounded-md md:relative md:z-0 md:flex md:flex-col md:bg-white md:shadow-md md:rounded-md absolute z-50"
       >
-        <div class="flex items-center justify-end h-20 border-b">
+        <div class="flex items-center justify-end">
           <button onclick="toggleSidebar()" class="focus:outline-none">
             <div class="flex items-center">
               <!-- <i class="fas fa-bars"></i> -->
@@ -53,11 +56,11 @@
             </div>
           </button>
         </div>
-        <nav class="mt-10">
+        <nav class="md:mt-10 mt-5">
           <a
             href="/dashboard.html"
             id="dashboard-link"
-            class="flex items-center p-2 text-gray-600 hover:bg-gray-200 hover:text-gray-700"
+            class="flex items-center p-2 text-heading hover:bg-gray-200 hover:text-gray-700"
           >
             <span class="inline-flex justify-center w-6">
               <img src="./assets/dashboard.svg" />
@@ -67,7 +70,7 @@
           <a
             href="/src/domains.html"
             id="domains-link"
-            class="flex items-center p-2 text-gray-600 hover:bg-gray-200 hover:text-gray-700"
+            class="flex items-center p-2 text-heading hover:bg-gray-200 hover:text-gray-700"
           >
             <span class="inline-flex justify-center w-6">
               <img src="./assets/domain.svg" />
@@ -77,7 +80,7 @@
           <a
             href="/hosting.html"
             id="hosting-link"
-            class="flex items-center p-2 text-gray-600 hover:bg-gray-200 hover:text-gray-700"
+            class="flex items-center p-2 text-heading hover:bg-gray-200 hover:text-gray-700"
           >
             <span class="inline-flex justify-center w-6">
               <img src="./assets/hosting.svg" />
@@ -86,7 +89,7 @@
           </a>
           <div class="flex flex-col">
             <button
-              class="flex items-center p-2 text-gray-600 hover:bg-gray-200 hover:text-gray-700"
+              class="flex items-center p-2 text-heading hover:bg-gray-200 hover:text-gray-700"
               onclick="toggleDropdown('manageServers')"
             >
               <span class="inline-flex justify-center w-6">
@@ -100,19 +103,19 @@
             <div id="manageServers" class="ml-8 hidden">
               <a
                 href="/src/dedicated-servers"
-                class="block p-2 text-gray-600 hover:bg-gray-200 hover:text-gray-700"
+                class="block p-2 text-heading hover:bg-gray-200 hover:text-gray-700"
                 >Dedicated Servers</a
               >
               <a
                 href="/src/virtual-servers"
-                class="block p-2 text-gray-600 hover:bg-gray-200 hover:text-gray-700"
+                class="block p-2 text-heading hover:bg-gray-200 hover:text-gray-700"
                 >Virtual Servers</a
               >
             </div>
           </div>
           <div class="flex flex-col">
             <button
-              class="flex items-center p-2 text-gray-600 hover:bg-gray-200 hover:text-gray-700"
+              class="flex items-center p-2 text-heading hover:bg-gray-200 hover:text-gray-700"
               onclick="toggleDropdown('manageSecurity')"
             >
               <span class="inline-flex justify-center w-6">
@@ -126,17 +129,17 @@
             <div id="manageSecurity" class="ml-8 hidden">
               <a
                 href="/src/ssl-certificate"
-                class="block p-2 text-gray-600 hover:bg-gray-200 hover:text-gray-700"
+                class="block p-2 text-heading hover:bg-gray-200 hover:text-gray-700"
                 >SSL Certificate</a
               >
               <a
                 href="/src/website-security"
-                class="block p-2 text-gray-600 hover:bg-gray-200 hover:text-gray-700"
+                class="block p-2 text-heading hover:bg-gray-200 hover:text-gray-700"
                 >Website Security</a
               >
               <a
                 href="/src/email-security"
-                class="block p-2 text-gray-600 hover:bg-gray-200 hover:text-gray-700"
+                class="block p-2 text-heading hover:bg-gray-200 hover:text-gray-700"
                 >Email Security</a
               >
             </div>
@@ -144,7 +147,7 @@
           <a
             href="/src/email-management"
             id="email-management-link"
-            class="flex items-center p-2 text-gray-600 hover:bg-gray-200 hover:text-gray-700"
+            class="flex items-center p-2 text-heading hover:bg-gray-200 hover:text-gray-700"
           >
             <span class="inline-flex justify-center w-6">
               <img src="./assets/email.svg" />
@@ -153,7 +156,7 @@
           </a>
           <div class="flex flex-col">
             <button
-              class="flex items-center p-2 text-gray-600 hover:bg-gray-200 hover:text-gray-700"
+              class="flex items-center p-2 text-heading hover:bg-gray-200 hover:text-gray-700"
               onclick="toggleDropdown('payments')"
             >
               <span class="inline-flex justify-center w-6">
@@ -167,12 +170,12 @@
             <div id="payments" class="ml-8 hidden">
               <a
                 href="/transaction.html"
-                class="block p-2 text-gray-600 hover:bg-gray-200 hover:text-gray-700"
+                class="block p-2 text-heading hover:bg-gray-200 hover:text-gray-700"
                 >Transaction History</a
               >
               <a
                 href="/dash_payment.html"
-                class="block p-2 text-gray-600 hover:bg-gray-200 hover:text-gray-700"
+                class="block p-2 text-heading hover:bg-gray-200 hover:text-gray-700"
                 >Payment Methods</a
               >
             </div>
@@ -180,7 +183,7 @@
           <a
             href="/setting.html"
             id="settings-link"
-            class="flex items-center p-2 text-gray-600 hover:bg-gray-200 hover:text-gray-700"
+            class="flex items-center p-2 text-heading hover:bg-gray-200 hover:text-gray-700"
           >
             <span class="inline-flex justify-center w-6">
               <img src="./assets/settings.svg" />
@@ -190,7 +193,7 @@
         </nav>
         <a
           href="#"
-          class="flex items-center p-2 text-gray-600 hover:bg-gray-200 hover:text-gray-700 absolute bottom-0 block"
+          class="flex items-center p-2 text-heading hover:bg-gray-200 hover:text-gray-700 absolute bottom-0 block mt-10"
         >
           <span class="inline-flex justify-center w-6">
             <img src="./assets/logout.svg" />
@@ -200,9 +203,9 @@
       </div>
 
       <!-- Main Content -->
-      <div class="w-full p-6">
-        <div class="p-6">
-          <div class="flex items-center gap-4">
+      <div class="w-full md:p-6">
+        <div class="md:p-6">
+          <div class="flex items-center gap-3 mb-4">
             <img src="./assets/dashboard.svg" />
             <h2 class="text-xl">Dashboard</h2>
           </div>
@@ -210,28 +213,28 @@
             class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6"
           >
             <div class="bg-white p-4 rounded-md py-8 shadow-md">
-              <div class="text-center">
+              <div class="text-center text-heading">
                 <p class="text-2xl">Domains</p>
                 <p class="text-3xl font-bold">5</p>
                 <p class="text-sm">ALL-TIME DATA</p>
               </div>
             </div>
             <div class="bg-white p-4 rounded-md py-8 shadow-md">
-              <div class="text-center">
+              <div class="text-center text-heading">
                 <p class="text-xl">Dashboard Item</p>
                 <p class="text-2xl font-bold">20</p>
                 <p class="text-sm">ALL-TIME DATA</p>
               </div>
             </div>
             <div class="bg-white p-4 rounded-md py-8 shadow-md">
-              <div class="text-center">
+              <div class="text-center text-heading">
                 <p class="text-xl">Dashboard Item</p>
                 <p class="text-2xl font-bold">35</p>
                 <p class="text-sm">ALL-TIME DATA</p>
               </div>
             </div>
             <div class="bg-white p-4 rounded-md py-8 shadow-md">
-              <div class="text-center">
+              <div class="text-center text-heading">
                 <p class="text-xl">Dashboard Item</p>
                 <p class="text-2xl font-bold">3</p>
                 <p class="text-sm">ALL-TIME DATA</p>
@@ -241,7 +244,7 @@
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <div class="bg-white p-4 rounded-lg shadow-md">
               <div class="border-b border-gray-200 mb-4">
-                <ul class="flex">
+                <ul class="flex overflow-x-auto">
                   <li class="mr-6">
                     <a
                       href="#current"
@@ -252,14 +255,14 @@
                   <li class="mr-6">
                     <a
                       href="#all-time"
-                      class="inline-block py-2 px-4 text-gray-600 hover:text-blue-600"
+                      class="inline-block py-2 px-4 text-heading hover:text-blue-600"
                       >ALL-TIME DATA</a
                     >
                   </li>
                   <li class="mr-6">
                     <a
                       href="#custom"
-                      class="inline-block py-2 px-4 text-gray-600 hover:text-blue-600"
+                      class="inline-block py-2 px-4 text-heading hover:text-blue-600"
                       >CUSTOM</a
                     >
                   </li>
@@ -267,64 +270,64 @@
               </div>
               <div id="current" class="tab-content">
                 <h2 class="text-xl font-bold mb-4">Title of table data</h2>
-                <ul>
+                <ul class="text-heading">
                   <li class="flex justify-between py-2">
                     <span class="font-bold"
-                      ><span class="mr-10">1</span> Item A</span
+                      ><span class="md:mr-10 mr-4">1</span> Item A</span
                     >
                     <span>Remarks or category</span>
                   </li>
                   <li class="flex justify-between py-2">
                     <span class="font-bold"
-                      ><span class="mr-10">2</span> Item B</span
+                      ><span class="md:mr-10 mr-4">2</span> Item B</span
                     >
                     <span>Remarks or category</span>
                   </li>
                   <li class="flex justify-between py-2">
                     <span class="font-bold"
-                      ><span class="mr-10">3</span> Item C</span
+                      ><span class="md:mr-10 mr-4">3</span> Item C</span
                     >
                     <span>Remarks or category</span>
                   </li>
                   <li class="flex justify-between py-2">
                     <span class="font-bold"
-                      ><span class="mr-10">4</span> Item D</span
+                      ><span class="md:mr-10 mr-4">4</span> Item D</span
                     >
                     <span>Remarks or category</span>
                   </li>
                   <li class="flex justify-between py-2">
                     <span class="font-bold"
-                      ><span class="mr-10">5</span> Item E</span
+                      ><span class="md:mr-10 mr-4">5</span> Item E</span
                     >
                     <span>Remarks or category</span>
                   </li>
                   <li class="flex justify-between py-2">
                     <span class="font-bold"
-                      ><span class="mr-10">6</span> Item F</span
+                      ><span class="md:mr-10 mr-4">6</span> Item F</span
                     >
                     <span>Remarks or category</span>
                   </li>
                   <li class="flex justify-between py-2">
                     <span class="font-bold"
-                      ><span class="mr-10">7</span> Item G</span
+                      ><span class="md:mr-10 mr-4">7</span> Item G</span
                     >
                     <span>Remarks or category</span>
                   </li>
                   <li class="flex justify-between py-2">
                     <span class="font-bold"
-                      ><span class="mr-10">8</span> Item H</span
+                      ><span class="md:mr-10 mr-4">8</span> Item H</span
                     >
                     <span>Remarks or category</span>
                   </li>
                   <li class="flex justify-between py-2">
                     <span class="font-bold"
-                      ><span class="mr-10">9</span> Item I</span
+                      ><span class="md:mr-10 mr-4">9</span> Item I</span
                     >
                     <span>Remarks or category</span>
                   </li>
                   <li class="flex justify-between py-2">
                     <span class="font-bold"
-                      ><span class="mr-10">10</span> Item J</span
+                      ><span class="md:mr-10 mr-4">10</span> Item J</span
                     >
                     <span>Remarks or category</span>
                   </li>
@@ -339,7 +342,7 @@
             </div>
             <div class="bg-white p-4 rounded-lg shadow-md">
               <div class="border-b border-gray-200 mb-4">
-                <ul class="flex">
+                <ul class="flex overflow-x-auto">
                   <li class="mr-6">
                     <a
                       href="#current"
@@ -350,14 +353,14 @@
                   <li class="mr-6">
                     <a
                       href="#all-time"
-                      class="inline-block py-2 px-4 text-gray-600 hover:text-blue-600"
+                      class="inline-block py-2 px-4 text-heading hover:text-blue-600"
                       >ALL-TIME DATA</a
                     >
                   </li>
                   <li class="mr-6">
                     <a
                       href="#custom"
-                      class="inline-block py-2 px-4 text-gray-600 hover:text-blue-600"
+                      class="inline-block py-2 px-4 text-heading hover:text-blue-600"
                       >CUSTOM</a
                     >
                   </li>
@@ -365,7 +368,9 @@
               </div>
 
               <div class="tab-content">
-                <div class="flex items-center justify-center space-x-4 mb-4">
+                <div
+                  class="flex items-center justify-center space-x-4 mb-4 flex-wrap align-center"
+                >
                   <div class="relative">
                     <input
                       type="date"
@@ -383,64 +388,64 @@
                   </div>
                 </div>
                 <h2 class="text-xl font-bold mb-4">Title of table data</h2>
-                <ul>
+                <ul class="text-heading">
                   <li class="flex justify-between py-2">
                     <span class="font-bold"
-                      ><span class="mr-10">1</span> Item A</span
+                      ><span class="md:mr-10 mr-4">1</span> Item A</span
                     >
                     <span>Remarks or category</span>
                   </li>
                   <li class="flex justify-between py-2">
                     <span class="font-bold"
-                      ><span class="mr-10">2</span> Item B</span
+                      ><span class="md:mr-10 mr-4">2</span> Item B</span
                     >
                     <span>Remarks or category</span>
                   </li>
                   <li class="flex justify-between py-2">
                     <span class="font-bold"
-                      ><span class="mr-10">3</span> Item C</span
+                      ><span class="md:mr-10 mr-4">3</span> Item C</span
                     >
                     <span>Remarks or category</span>
                   </li>
                   <li class="flex justify-between py-2">
                     <span class="font-bold"
-                      ><span class="mr-10">4</span> Item D</span
+                      ><span class="md:mr-10 mr-4">4</span> Item D</span
                     >
                     <span>Remarks or category</span>
                   </li>
                   <li class="flex justify-between py-2">
                     <span class="font-bold"
-                      ><span class="mr-10">5</span> Item E</span
+                      ><span class="md:mr-10 mr-4">5</span> Item E</span
                     >
                     <span>Remarks or category</span>
                   </li>
                   <li class="flex justify-between py-2">
                     <span class="font-bold"
-                      ><span class="mr-10">6</span> Item F</span
+                      ><span class="md:mr-10 mr-4">6</span> Item F</span
                     >
                     <span>Remarks or category</span>
                   </li>
                   <li class="flex justify-between py-2">
                     <span class="font-bold"
-                      ><span class="mr-10">7</span> Item G</span
+                      ><span class="md:mr-10 mr-4">7</span> Item G</span
                     >
                     <span>Remarks or category</span>
                   </li>
                   <li class="flex justify-between py-2">
                     <span class="font-bold"
-                      ><span class="mr-10">8</span> Item H</span
+                      ><span class="md:mr-10 mr-4">8</span> Item H</span
                     >
                     <span>Remarks or category</span>
                   </li>
                   <li class="flex justify-between py-2">
                     <span class="font-bold"
-                      ><span class="mr-10">9</span> Item I</span
+                      ><span class="md:mr-10 mr-4">9</span> Item I</span
                     >
                     <span>Remarks or category</span>
                   </li>
                   <li class="flex justify-between py-2">
                     <span class="font-bold"
-                      ><span class="mr-10">10</span> Item J</span
+                      ><span class="md:mr-10 mr-4">10</span> Item J</span
                     >
                     <span>Remarks or category</span>
                   </li>

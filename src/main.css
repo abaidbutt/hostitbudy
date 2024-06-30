@@ -102,6 +102,7 @@ p {
 }
 .sidebar-expanded {
   width: 260px;
+  display: flex;
 }
 .active-tab {
   background-color: #d7e7e3;
