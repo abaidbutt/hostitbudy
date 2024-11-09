@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Buddy</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <!-- ========== Header CONTENT ========== -->
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+      <div class="container">
+        <!-- Logo -->
+        <a href="#" class="navbar-brand">
+          <img
+            src="./assets/Logo.svg"
+            alt="Host It Buddy Logo"
+            class="d-inline-block align-middle"
+            style="height: 40px"
+          />
+        </a>
+
+        <!-- Mobile Menu Button -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar Links -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto align-items-center">
+            <!-- Domains Dropdown -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle text-muted"
+                href="#"
+                id="domainsDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Domains
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="domainsDropdown">
+                <li><a class="dropdown-item" href="#">Buy</a></li>
+                <li><a class="dropdown-item" href="#">Transfer</a></li>
+                <li><a class="dropdown-item" href="#">Renew</a></li>
+                <li><a class="dropdown-item" href="#">Whois</a></li>
+                <li><a class="dropdown-item" href="#">Backorder</a></li>
+              </ul>
+            </li>
+
+            <!-- Hosting Dropdown -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle text-muted"
+                href="#"
+                id="hostingDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Hosting
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="hostingDropdown">
+                <li><a class="dropdown-item" href="#">Web Hosting</a></li>
+                <li><a class="dropdown-item" href="#">Business Hosting</a></li>
+                <li><a class="dropdown-item" href="#">WordPress Hosting</a></li>
+                <li><a class="dropdown-item" href="#">WooCommerce</a></li>
+                <li><a class="dropdown-item" href="#">Windows</a></li>
+                <li><a class="dropdown-item" href="#">DNS</a></li>
+              </ul>
+            </li>
+
+            <!-- Servers Dropdown -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle text-muted"
+                href="#"
+                id="serversDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Servers
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="serversDropdown">
+                <li>
+                  <a class="dropdown-item" href="#">cPanel Managed VPS</a>
+                </li>
+                <li><a class="dropdown-item" href="#">Windows VPS</a></li>
+                <li><a class="dropdown-item" href="#">Linux VPS</a></li>
+                <li><a class="dropdown-item" href="#">Linux Servers</a></li>
+              </ul>
+            </li>
+
+            <!-- Support Link -->
+            <li class="nav-item">
+              <a href="#" class="nav-link text-muted">Support</a>
+            </li>
+
+            <!-- Cart Button -->
+            <li class="nav-item">
+              <button class="btn btn-outline-secondary btn-icon ms-3">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="none"
+                  stroke-width="1.5"
+                >
+                  <path
+                    d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke="url(#gradient)"
+                  />
+                  <defs>
+                    <linearGradient
+                      id="gradient"
+                      x1="0%"
+                      y1="0%"
+                      x2="100%"
+                      y2="100%"
+                    >
+                      <stop offset="0%" stop-color="#1a5a96" />
+                      <stop offset="100%" stop-color="#52c29a" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </button>
+            </li>
+
+            <!-- Sign In Button -->
+            <li class="nav-item">
+              <button
+                class="btn btn-outline-secondary ms-3 d-flex align-items-center gap-2"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="none"
+                  stroke-width="1.5"
+                  class="gradient-icon"
+                >
+                  <path
+                    d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke="url(#gradient)"
+                  />
+                  <defs>
+                    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%">
+                      <stop offset="0%" stop-color="#1a5a96" />
+                      <stop offset="100%" stop-color="#52c29a" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+                <span>Sign In</span>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ==========  MAIN CONTENT ========== -->
+    <!-- Cart Section -->
+    <section class="container py-5">
+      <!-- Cart Header -->
+      <div class="d-flex align-items-center mb-4">
+        <i class="bi bi-cart fs-1 text-secondary me-2"></i>
+        <h1 class="display-5 fw-semibold text-secondary">Cart</h1>
+      </div>
+
+      <div class="row">
+        <!-- Cart Items -->
+        <div class="col-lg-8 col-12">
+          <!-- Cart Item -->
+          <div class="border-bottom pb-4 mb-4">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <h2 class="h5 fw-semibold text-secondary mb-0">
+                specialdomain.net
+              </h2>
+              <span class="h6 fw-semibold text-secondary mb-0">SG$39</span>
+            </div>
+            <p class="text-secondary mb-1">Domain name registration</p>
+            <p class="text-secondary mb-3">
+              Extra information and description here if needed
+            </p>
+
+            <!-- Year Selection -->
+            <div class="mb-3">
+              <label for="year" class="form-label text-secondary me-2"
+                >Year:</label
+              >
+              <select
+                class="form-select border-secondary w-auto d-inline-block"
+              >
+                <option selected>1 Year</option>
+                <option>2 Years</option>
+                <option>5 Years</option>
+                <option>10 Years</option>
+              </select>
+            </div>
+
+            <!-- Subscription Options -->
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <div class="form-check form-switch">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  role="switch"
+                  id="flexSwitchCheckDefault1"
+                />
+                <label
+                  class="form-check-label text-secondary"
+                  for="flexSwitchCheckDefault1"
+                >
+                  Title text goes here <br /><small class="text-muted"
+                    >Secondary text line goes here</small
+                  >
+                </label>
+              </div>
+              <span class="text-secondary">SG$19</span>
+            </div>
+
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="form-check form-switch">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  role="switch"
+                  id="flexSwitchCheckDefault2"
+                  checked
+                />
+                <label
+                  class="form-check-label text-secondary"
+                  for="flexSwitchCheckDefault2"
+                >
+                  Title text goes here <br /><small class="text-muted"
+                    >Secondary text line goes here</small
+                  >
+                </label>
+              </div>
+              <span class="text-secondary">SG$10</span>
+            </div>
+
+            <!-- Remove Item Icon -->
+            <div class="text-end mt-3">
+              <i class="bi bi-trash text-primary" style="cursor: pointer"></i>
+            </div>
+          </div>
+
+          <!-- Repeat Cart Item Structure for each item -->
+          <div class="border-bottom pb-4 mb-4">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <h2 class="h5 fw-semibold text-secondary mb-0">
+                specialdomain.net
+              </h2>
+              <span class="h6 fw-semibold text-secondary mb-0">SG$39</span>
+            </div>
+            <p class="text-secondary mb-1">Domain name registration</p>
+
+            <!-- Year Selection -->
+            <div class="mb-3">
+              <label for="year" class="form-label text-secondary me-2"
+                >Year:</label
+              >
+              <select
+                class="form-select border-secondary w-auto d-inline-block"
+              >
+                <option selected>1 Year</option>
+                <option>2 Years</option>
+                <option>5 Years</option>
+                <option>10 Years</option>
+              </select>
+            </div>
+
+            <!-- Subscription Options -->
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <div class="form-check form-switch">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  role="switch"
+                  id="flexSwitchCheckDefault3"
+                  checked
+                />
+                <label
+                  class="form-check-label text-secondary"
+                  for="flexSwitchCheckDefault3"
+                >
+                  Title text goes here <br /><small class="text-muted"
+                    >Secondary text line goes here</small
+                  >
+                </label>
+              </div>
+              <span class="text-secondary">SG$19</span>
+            </div>
+
+            <!-- Remove Item Icon -->
+            <div class="text-end mt-3">
+              <i class="bi bi-trash text-primary" style="cursor: pointer"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Order Summary -->
+        <div class="col-lg-4">
+          <div class="card p-4 shadow">
+            <h3 class="h4 fw-semibold text-secondary mb-4">Order</h3>
+            <p class="text-secondary">3 Items</p>
+            <hr />
+
+            <!-- Order Details -->
+            <div class="mb-3">
+              <div class="d-flex justify-content-between">
+                <span class="text-secondary">Subtotal</span>
+                <span class="text-secondary">SG$146</span>
+              </div>
+              <div class="d-flex justify-content-between">
+                <span class="text-secondary">GST</span>
+                <span class="text-secondary">SG$3.18</span>
+              </div>
+              <div class="d-flex justify-content-between">
+                <span class="text-secondary">Discount</span>
+                <span class="text-secondary">– SG$0</span>
+              </div>
+            </div>
+
+            <hr />
+
+            <!-- Total -->
+            <div class="d-flex justify-content-between fw-bold">
+              <span class="text-secondary">Total</span>
+              <span class="h5 text-secondary">SG$149.18</span>
+            </div>
+
+            <!-- Actions -->
+            <button class="btn btn-success w-100 mt-4">Pay</button>
+            <button class="btn btn-outline-success w-100 mt-2">
+              Continue Shopping
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== Footer ========== -->
+    <!-- Footer -->
+    <footer class="bg-white shadow mt-auto">
+      <div class="container py-5">
+        <div class="row">
+          <!-- Contact Section -->
+          <div class="col-md-4">
+            <h3 class="text-3xl fw-bold mb-4">
+              <img
+                src="./assets/Logo.svg"
+                alt="Host It Buddy Logo"
+                class="img-fluid mb-3"
+              />
+            </h3>
+            <p class="text-muted mb-2">+00 0000 0000</p>
+            <p class="mb-2">
+              <a
+                href="mailto:emailaddress@hostitbuddy.com"
+                class="text-muted text-decoration-none"
+                >emailaddress@hostitbuddy.com</a
+              >
+            </p>
+            <p class="text-muted mb-2">Insert Office Address Here</p>
+          </div>
+
+          <!-- General, Domains, Hosting, Servers Sections -->
+          <div class="col-md-8">
+            <div class="row">
+              <!-- General Section -->
+              <div class="col-6 col-lg-3">
+                <h5 class="fw-semibold text-muted mb-3">General</h5>
+                <ul class="list-unstyled">
+                  <li>
+                    <a href="#" class="text-muted text-decoration-none">Home</a>
+                  </li>
+                  <li>
+                    <a href="#" class="text-muted text-decoration-none"
+                      >About Us</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="text-muted text-decoration-none">FAQ</a>
+                  </li>
+                  <li>
+                    <a href="#" class="text-muted text-decoration-none"
+                      >Our Policies</a
+                    >
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Domains Section -->
+              <div class="col-6 col-lg-3">
+                <h5 class="fw-semibold text-muted mb-3">Domains</h5>
+                <ul class="list-unstyled">
+                  <li>
+                    <a href="#" class="text-muted text-decoration-none">Buy</a>
+                  </li>
+                  <li>
+                    <a href="#" class="text-muted text-decoration-none"
+                      >Transfer</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="text-muted text-decoration-none"
+                      >Renew</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="text-muted text-decoration-none"
+                      >WhoIs</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="text-muted text-decoration-none"
+                      >Backorder</a
+                    >
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Hosting Section -->
+              <div class="col-6 col-lg-3">
+                <h5 class="fw-semibold text-muted mb-3">Hosting</h5>
+                <ul class="list-unstyled">
+                  <li>
+                    <a href="#" class="text-muted text-decoration-none"
+                      >Web Hosting</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="text-muted text-decoration-none"
+                      >Business Hosting</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="text-muted text-decoration-none"
+                      >WordPress Hosting</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="text-muted text-decoration-none"
+                      >Email Hosting</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="text-muted text-decoration-none"
+                      >WooCommerce</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="text-muted text-decoration-none"
+                      >Online Store</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="text-muted text-decoration-none"
+                      >Linux Servers</a
+                    >
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Servers Section -->
+              <div class="col-6 col-lg-3">
+                <h5 class="fw-semibold text-muted mb-3">Servers</h5>
+                <ul class="list-unstyled">
+                  <li>
+                    <a href="#" class="text-muted text-decoration-none"
+                      >cPanel Managed VPS</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="text-muted text-decoration-none"
+                      >Windows VPS</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="text-muted text-decoration-none"
+                      >Linux VPS</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="text-muted text-decoration-none"
+                      >Linux Servers</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="mt-5 pt-4 border-top">
+          <div class="text-center">
+            <p class="text-muted mb-0">
+              &copy; 2024 Host It Buddy, all rights reserved...
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

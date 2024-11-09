@@ -1,0 +1,29 @@
+.navbar-custom {
+  background-color: #f8f9fa; /* Adjust as needed */
+  padding: 0.5rem 1rem;
+  border-bottom: 2px solid #007bff; /* Blue bottom border */
+}
+.search-input {
+  background-color: #f1f3f5;
+  border: none;
+  border-radius: 0.5rem;
+  padding-left: 2rem;
+}
+.search-input:focus {
+  outline: none;
+  box-shadow: none;
+}
+.notification-icon {
+  position: relative;
+  font-size: 1.5rem;
+}
+.notification-badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  padding: 0.25rem;
+  font-size: 0.75rem;
+}

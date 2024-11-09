@@ -1,0 +1,112 @@
+/* Pricing */
+.dropdown-menu.show-on-hover {
+  display: none;
+}
+.dropdown:hover .dropdown-menu.show-on-hover {
+  display: block;
+}
+.text-gradient {
+  background: linear-gradient(to right, #1a5a96, #52c29a);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.pricing-title {
+  font-weight: bold;
+  color: #123456; /* Customize to match your theme color */
+}
+.pricing-card {
+  border: 1px solid #e1e5eb;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+.pricing-card h3 {
+  color: #4caf50; /* Customize heading color */
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.pricing-card p.price {
+  font-size: 1.1rem;
+  color: #4caf50;
+  font-weight: 500;
+}
+.pricing-card ul {
+  list-style: none;
+  padding: 0;
+}
+.pricing-card li {
+  font-size: 0.9rem;
+  color: #666;
+}
+.btn-explore {
+  background-color: #4caf50;
+  color: white;
+  border-radius: 5px;
+  font-weight: bold;
+}
+.btn-explore:hover {
+  background-color: #388e3c;
+}
+/* header navbar */
+.navbar-nav .nav-link {
+  color: #333;
+}
+.navbar-nav .nav-link:hover {
+  color: #007bff; /* Replace with primary color */
+}
+.dropdown-menu.show-on-hover {
+  display: none;
+}
+.dropdown:hover .dropdown-menu.show-on-hover {
+  display: block;
+}
+.btn-icon {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+.gradient-icon svg {
+  stroke: url(#gradient);
+}
+
+/* Hero section */
+.hero-section {
+  background-image: url("./assets/main_back.png");
+  background-size: cover;
+  background-position: center;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  color: white;
+  z-index: 100;
+}
+.hero-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  color: #123456; /* Adjust color to match your theme */
+}
+.search-box {
+  max-width: 600px;
+  margin-top: 1rem;
+}
+.search-box input {
+  border-radius: 25px 0 0 25px;
+  border-right: none;
+}
+.search-box button {
+  border-radius: 0 25px 25px 0;
+  background-color: #4caf50;
+  color: white;
+}
+
+/* choose  */
+.feature-icon {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 1rem;
+}
+.feature-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #123456; /* Adjust to match theme color */
+}
